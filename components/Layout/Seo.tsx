@@ -20,9 +20,10 @@ export default function Seo({
       title: 'Home | Reyhan Naufal Rahman',
       description:
          'Reyhan has experience of writting web apps. He has a knowledge of Javascript, Typescript and browser APIS as well as significant experience with popular libraries like React and Redux.',
-      image: 'https://reyhannaufal-com.vercel.app/reyhan-logo.svg',
+      image: 'https://www.reyhannaufal.com/reyhan-logo.svg',
       type: 'website',
       robots: 'follow, index',
+      baseUrl: 'https://www.reyhannaufal.com',
       ...props,
    };
 
