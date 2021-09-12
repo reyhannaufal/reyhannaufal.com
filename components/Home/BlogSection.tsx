@@ -25,7 +25,7 @@ export default function BlogSection() {
                      />
                   </div>
                   <div className='sm:space-y-2'>
-                     <h3 className='inline-block px-5 py-2 mt-8 mb-2 text-sm font-medium text-indigo-800 bg-indigo-300 sm:mt-0 rounded-3xl'>
+                     <h3 className='inline-block px-4 py-2 mt-8 mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm sm:mt-0 rounded-3xl'>
                         Javascript
                      </h3>
                      <h2 className='text-lg font-bold sm:text-xl'>

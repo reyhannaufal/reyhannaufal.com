@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const headerList = [
    { id: '1', title: 'Home', href: '/' },
-   { id: '2', title: 'About', href: '/about' },
+   { id: '2', title: 'Projects', href: '/projects' },
 ];
 
 export default function Header() {
@@ -17,11 +17,11 @@ export default function Header() {
                height={43.91}
             />
          </div>
-         <div className='grid items-center grid-cols-2 space-x-4 text-sm font-medium text-gray-400 lg:grid-cols-3'>
+         <div className='grid items-center grid-cols-2 space-x-4 text-xs font-medium text-gray-400 sm:text-sm lg:grid-cols-3'>
             {headerList.map((item) => (
                <a
                   key={item.id}
-                  className='flex justify-center px-2 py-2 rounded-md hover:text-gray-300 first-of-type:bg-primary first-of-type:text-gray-100'
+                  className='flex justify-center  sm:px-[14px] py-2 rounded-md hover:text-gray-300 first-of-type:bg-primary first-of-type:text-gray-100'
                >
                   <Link href={item.href}>{item.title}</Link>
                </a>
