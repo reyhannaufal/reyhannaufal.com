@@ -36,16 +36,24 @@ export default function Seo({
          <link rel='canonical' href={`${meta.baseUrl}${router.asPath}`} />
          {/* Open Graph */}
          <meta property='og:type' content={meta.type} />
-         <meta property='og:site_name' content='Schematics ITS' />
+         <meta
+            property='og:site_name'
+            content={`${router.asPath} | Reyhan Naufal Rahman`}
+         />
          <meta property='og:description' content={description} />
          <meta property='og:title' content={title} />
          <meta name='image' property='og:image' content={image || meta.image} />
          {/* Twitter */}
          <meta name='twitter:card' content='summary_large_image' />
-         <meta name='twitter:site' content='@schematics_its' />
+         <meta
+            name='twitter:site'
+            content={`${router.asPath} | Reyhan Naufal Rahman`}
+         />
          <meta name='twitter:title' content={title} />
          <meta name='twitter:description' content={description} />
          <meta name='twitter:image' content={image || meta.image} />
+
+         <meta httpEquiv='Content-Security-Policy' content='script-src' />
 
          {/* Favicon */}
          <link rel='icon' type='image/png' href='/reyhan-logo.svg' />
