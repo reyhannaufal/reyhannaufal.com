@@ -32,14 +32,8 @@ export default function Seo({
          <title>{title || meta.title}</title>
          <meta name='robots' content={meta.robots} />
          <meta content={description || meta.description} name='description' />
-         <meta
-            property='og:url'
-            content={`https://reyhannaufal-com.vercel.app${router.asPath}`}
-         />
-         <link
-            rel='canonical'
-            href={`https://reyhannaufal-com.vercel.app${router.asPath}`}
-         />
+         <meta property='og:url' content={`${meta.baseUrl}${router.asPath}`} />
+         <link rel='canonical' href={`${meta.baseUrl}${router.asPath}`} />
          {/* Open Graph */}
          <meta property='og:type' content={meta.type} />
          <meta property='og:site_name' content='Schematics ITS' />
@@ -56,10 +50,7 @@ export default function Seo({
          {/* Favicon */}
          <link rel='icon' type='image/png' href='/reyhan-logo.svg' />
 
-         <link
-            rel='canonical'
-            href={`https://reyhannaufal-com.vercel.app${router.asPath}`}
-         />
+         <link rel='canonical' href={`${meta.baseUrl}${router.asPath}`} />
 
          <link rel='preconnect' href='https://fonts.googleapis.com' />
          <link rel='preconnect' href='https://fonts.gstatic.com' />
