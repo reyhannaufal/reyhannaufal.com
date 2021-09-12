@@ -33,11 +33,11 @@ export default function Seo({
          <meta content={description} name='description' />
          <meta
             property='og:url'
-            content={`https://schematics.its.ac.id${router.asPath}`}
+            content={`https://reyhannaufal-com.vercel.app${router.asPath}`}
          />
          <link
             rel='canonical'
-            href={`https://schematics.its.ac.id${router.asPath}`}
+            href={`https://reyhannaufal-com.vercel.app${router.asPath}`}
          />
          {/* Open Graph */}
          <meta property='og:type' content={meta.type} />
@@ -54,7 +54,7 @@ export default function Seo({
 
          <link
             rel='canonical'
-            href={`https://schematics.its.ac.id${router.asPath}`}
+            href={`https://reyhannaufal-com.vercel.app${router.asPath}`}
          />
 
          <link rel='preconnect' href='https://fonts.googleapis.com' />
