@@ -1,0 +1,14 @@
+{
+    "tabWidth": 4,
+    "jsxSingleQuote": true,
+    "singleQuote": true,
+    "arrowParens": "always",
+    "overrides": [
+        {
+            "files": "*.mdx",
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}
