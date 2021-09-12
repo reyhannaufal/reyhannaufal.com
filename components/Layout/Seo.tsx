@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 type SeoProps = {
-   title: string;
+   title?: string;
    description?: string;
    image?: string;
    date?: string;
@@ -20,7 +20,7 @@ export default function Seo({
       title: 'Home | Reyhan Naufal Rahman',
       description:
          'Reyhan has experience of writting web apps. He has a knowledge of Javascript, Typescript and browser APIS as well as significant experience with popular libraries like React and Redux.',
-      image: 'https://schematics.its.ac.id/favicon/large-og.png',
+      image: 'https://reyhannaufal-com.vercel.app/reyhan-logo.svg',
       type: 'website',
       robots: 'follow, index',
       ...props,
@@ -28,9 +28,9 @@ export default function Seo({
 
    return (
       <Head>
-         <title>{title}</title>
+         <title>{title || meta.title}</title>
          <meta name='robots' content={meta.robots} />
-         <meta content={description} name='description' />
+         <meta content={description || meta.description} name='description' />
          <meta
             property='og:url'
             content={`https://reyhannaufal-com.vercel.app${router.asPath}`}
@@ -44,13 +44,16 @@ export default function Seo({
          <meta property='og:site_name' content='Schematics ITS' />
          <meta property='og:description' content={description} />
          <meta property='og:title' content={title} />
-         <meta name='image' property='og:image' content={image} />
+         <meta name='image' property='og:image' content={image || meta.image} />
          {/* Twitter */}
          <meta name='twitter:card' content='summary_large_image' />
          <meta name='twitter:site' content='@schematics_its' />
          <meta name='twitter:title' content={title} />
          <meta name='twitter:description' content={description} />
-         <meta name='twitter:image' content={image} />
+         <meta name='twitter:image' content={image || meta.image} />
+
+         {/* Favicon */}
+         <link rel='icon' type='image/png' href='/reyhan-logo.svg' />
 
          <link
             rel='canonical'

@@ -36,9 +36,9 @@ export default function BlogSection() {
                         volutpat massa dictumst amet. Sapien tortor lacus arcu.
                      </p>
                      <div className='mt-5 text-sm sm:mt-0'>
-                        <p className='font-medium text-gray-900 '>Jakarta</p>
+                        <p className='font-medium text-gray-900 '>Bekasi</p>
                         <p className='font-normal text-gray-500 '>
-                           Mar 16, 2020 · 6 min read
+                           Mar 16, 2021 · 6 min read
                         </p>
                      </div>
                   </div>
