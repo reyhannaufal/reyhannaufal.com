@@ -1,18 +1,26 @@
 import type { AppProps } from 'next/app';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
+import { useProgressStore } from '@/hooks/useProgressStore';
+
 import '@/styles/globals.css';
-import { useEffect } from 'react';
+import { Progress } from '@/components/Progress';
 
 function MyApp({ Component, pageProps }: AppProps) {
    const router = useRouter();
 
+   const setIsAnimating = useProgressStore<any>(
+      (state: any) => state?.setIsAnimating
+   );
+   const isAnimating = useProgressStore((state: any) => state?.isAnimating);
+
    const HandleLoadingScreen = () => {
       const handleStart = () => {
-         console.log('Loading');
+         setIsAnimating(true);
       };
       const handleStop = () => {
-         console.log('stop');
+         setIsAnimating(false);
       };
 
       router.events.on('routeChangeStart', handleStart);
@@ -30,6 +38,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       HandleLoadingScreen();
    }, [router]);
 
-   return <Component {...pageProps} />;
+   return (
+      <>
+         <Progress isAnimating={isAnimating} />
+         <Component {...pageProps} />
+      </>
+   );
 }
 export default MyApp;
