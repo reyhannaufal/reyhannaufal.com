@@ -17,9 +17,12 @@ export default function Header() {
                height={43.91}
             />
          </div>
-         <div className='grid items-center grid-cols-2 space-x-4 text-sm font-medium text-gray-400 md:text-base lg:grid-cols-3'>
+         <div className='grid items-center grid-cols-2 space-x-4 text-sm font-medium text-gray-400 lg:grid-cols-3'>
             {headerList.map((item) => (
-               <a key={item.id} className='hover:text-gray-300'>
+               <a
+                  key={item.id}
+                  className='flex justify-center px-2 py-2 rounded-md hover:text-gray-300 first-of-type:bg-primary first-of-type:text-gray-100'
+               >
                   <Link href={item.href}>{item.title}</Link>
                </a>
             ))}
