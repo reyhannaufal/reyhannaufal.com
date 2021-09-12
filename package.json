@@ -12,6 +12,7 @@
    "dependencies": {
       "@tailwindcss/aspect-ratio": "^0.2.1",
       "@tailwindcss/forms": "^0.3.3",
+      "@tanem/react-nprogress": "^3.0.79",
       "autoprefixer": "^10.3.4",
       "next": "11.1.2",
       "next-sitemap": "^1.6.168",
