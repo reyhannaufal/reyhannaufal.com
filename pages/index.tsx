@@ -1,22 +1,21 @@
-import Cta from '@/components/Cta';
-import Header from '@/components/Header';
 import type { NextPage } from 'next';
-import Head from 'next/head';
+
+import BlogSection from '@/components/Home/BlogSection';
+import Layout from '@/components/Layout/Layout';
+import Seo from '@/components/Layout/Seo';
+import MainContent from '@/components/Home/MainContent';
 
 const Home: NextPage = () => {
-    return (
-        <main>
-            <Head>
-                <title>Home</title>
-            </Head>
-            <Header />
-            <section className='bg-pink-50'>
-                <div>
-                    <Cta />
-                </div>
-            </section>
-        </main>
-    );
+   return (
+      <Layout>
+         <Seo
+            title='Home | Reyhan Naufal Rahman'
+            description='Reyhan has experience of writting web apps. He has a knowledge of Javascript, Typescript and browser APIS as well as significant experience with popular libraries like React and Redux.'
+         />
+         <MainContent />
+         <BlogSection />
+      </Layout>
+   );
 };
 
 export default Home;
