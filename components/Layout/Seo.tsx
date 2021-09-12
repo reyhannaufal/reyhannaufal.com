@@ -53,9 +53,6 @@ export default function Seo({
          <meta name='twitter:description' content={description} />
          <meta name='twitter:image' content={image || meta.image} />
 
-         {/* // eslint-disable-next-line react/no-unknown-property */}
-         <meta http-equiv='Content-Security-Policy' content='script-src' />
-
          {/* Favicon */}
          <link rel='icon' type='image/png' href='/reyhan-logo.svg' />
 
