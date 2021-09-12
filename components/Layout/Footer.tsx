@@ -1,7 +1,6 @@
 import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io';
 
 const footerLogoSize = 'w-7 h-7';
-
 const footerList = [
    {
       id: '1',
@@ -17,8 +16,10 @@ const footerList = [
 
 export default function Footer() {
    return (
-      <footer className='flex-col py-10 mx-auto text-center text-primary'>
-         <h2 className='pb-4 text-lg'>Contact Me</h2>
+      <footer className='flex-col py-20 mx-auto text-center sm:pt-36 text-primary'>
+         <h2 className='max-w-3xl py-4 mx-auto text-lg font-bold border-t-2 rounded-sm '>
+            Contact Me
+         </h2>
          <div className='flex flex-row justify-center pb-3 space-x-2'>
             {footerList.map((item) => (
                <a

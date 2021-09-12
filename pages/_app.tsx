@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 import { useProgressStore } from '@/hooks/useProgressStore';
+import { Progress } from '@/components/Progress';
 
 import '@/styles/globals.css';
-import { Progress } from '@/components/Progress';
 
 function MyApp({ Component, pageProps }: AppProps) {
    const router = useRouter();
