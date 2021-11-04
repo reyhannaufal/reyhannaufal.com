@@ -5,4 +5,8 @@ module.exports = {
       defaultLocale: 'id',
    },
    reactStrictMode: true,
+   swcMinify: true,
+   images: {
+      formats: ['image/avif', 'image/webp'],
+   },
 };
