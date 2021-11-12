@@ -13,7 +13,6 @@ const stackStyles = {
       'w-7 h-7 text-primary hover:text-secondary hover:scale transition  ease-in-out transform hover:-translate-y-1 hover:scale-110',
 };
 
-/* eslint-disable react/no-unescaped-entities */
 export default function MainContent() {
    return (
       <section className='flex flex-col-reverse items-center py-4 sm:py-14 lg:flex-row'>
@@ -45,9 +44,11 @@ export default function MainContent() {
             <div className='w-52 h-52 md:h-72 md:w-72 lg:h-auto lg:w-auto'>
                <Image
                   src='/laptop-illustrations.svg'
+                  placeholder='blur'
                   height={441.64}
                   width={519}
                   alt='laptop-illusrations'
+                  blurDataURL='/laptop-illustrations.svg'
                />
             </div>
          </div>

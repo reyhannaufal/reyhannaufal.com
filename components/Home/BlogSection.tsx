@@ -19,6 +19,8 @@ export default function BlogSection() {
                   <div>
                      <Image
                         src='/laptop-illustrations.svg'
+                        placeholder='blur'
+                        blurDataURL='/laptop-illustrations.svg'
                         height={189}
                         width={222}
                         alt='blog post'
