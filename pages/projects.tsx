@@ -1,5 +1,5 @@
-import Layout from '@/components/Layout/Layout';
-import Seo from '@/components/Layout/Seo';
+import Layout from '@/components/Layout';
+import Seo from '@/components/Layout/LayoutSeo';
 
 const meta = {
    title: 'Projects | Reyhan Naufal Rahman',

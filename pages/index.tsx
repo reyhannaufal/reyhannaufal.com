@@ -1,16 +1,14 @@
 import type { NextPage } from 'next';
 
-import BlogSection from '@/components/Home/BlogSection';
-import Layout from '@/components/Layout/Layout';
-import MainContent from '@/components/Home/MainContent';
-import Seo from '@/components/Layout/Seo';
+import Layout from '@/components/Layout';
+import HomeView from '@/routes/Home/HomeView';
+import Seo from '@/components/Layout/LayoutSeo';
 
 const Home: NextPage = () => {
    return (
       <Layout>
          <Seo />
-         <MainContent />
-         <BlogSection />
+         <HomeView />
       </Layout>
    );
 };
