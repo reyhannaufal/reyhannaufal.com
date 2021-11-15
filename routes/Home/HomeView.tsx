@@ -15,7 +15,7 @@ const stackStyles = {
 
 export default function HomeView() {
    return (
-      <div>
+      <>
          <section className='flex flex-col-reverse items-center py-4 sm:py-14 lg:flex-row'>
             <div className='max-w-lg text-left'>
                <div className='space-y-1 md:space-y-2'>
@@ -101,6 +101,6 @@ export default function HomeView() {
                ))}
             </div>
          </section>
-      </div>
+      </>
    );
 }
