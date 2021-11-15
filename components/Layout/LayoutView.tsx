@@ -1,6 +1,6 @@
 import React from 'react';
-import Footer from './Footer';
-import Header from './Header';
+import Footer from './LayoutFooter';
+import Header from './LayoutHeader';
 
 type LayoutInterface = {
    children: React.ReactNode;
