@@ -4,8 +4,8 @@ module.exports = {
       locales: ['id'],
       defaultLocale: 'id',
    },
-   reactStrictMode: true,
-   swcMinify: true,
+   // reactStrictMode: true,
+   // swcMinify: true,
    images: {
       formats: ['image/avif', 'image/webp'],
       domains: ['reyhannaufal.com'],
