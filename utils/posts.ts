@@ -25,14 +25,14 @@ export function getPostBySlug(slug: string, fields = []) {
    fields.forEach((field) => {
       console.log(field);
       if (field === 'slug') {
-         items[field] = realSlug;
+         items[field] = realSlug as never;
       }
       if (field === 'content') {
-         items[field] = content;
+         items[field] = content as never;
       }
 
       if (typeof data[field] !== 'undefined') {
-         items[field] = data[field];
+         items[field] = data[field] as never;
       }
    });
 
@@ -41,11 +41,14 @@ export function getPostBySlug(slug: string, fields = []) {
 
 export function getAllPosts(fields = []) {
    const slugs = getPostSlugs();
+   type AllPosts = {
+      date?: string;
+   };
    const posts = slugs
-      .map((slug) => getPostBySlug(slug, fields))
+      .map((slug: any) => getPostBySlug(slug, fields))
       // sort posts by date in descending order
-      .sort((firstPost, secondPost) =>
-         firstPost.date > secondPost.date ? -1 : 1
+      .sort((firstPost: AllPosts, secondPost: AllPosts) =>
+         firstPost.date ?? '' > (secondPost.date ?? '') ? -1 : 1
       );
    return posts;
 }
