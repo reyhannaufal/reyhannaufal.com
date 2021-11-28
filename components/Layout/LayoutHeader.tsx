@@ -6,8 +6,8 @@ import { classNames } from '@/utils/classNames';
 
 const headerList = [
    { id: '1', title: 'Home', href: '/' },
-   { id: '2', title: 'Blog', href: '/blog' },
-   { id: '2', title: 'Projects', href: '/projects' },
+   // { id: '2', title: 'Blog', href: '/blog' },
+   { id: '2', title: 'Projects', href: '/project' },
 ];
 
 export default function Header() {
