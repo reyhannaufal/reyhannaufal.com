@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout';
 import markdownToHtml from '@/utils/markDownToHtml';
 import { getAllPosts, getPostBySlug } from '@/utils/posts';
+import markdownStyles from './markdown-content.module.css';
 
 export type Post = {
    slug?: string;
@@ -13,9 +14,9 @@ export type Post = {
 export default function Posts({ post }: { post: Post }) {
    return (
       <Layout>
-         <p>{post.title}</p>
+         <h1 className='font-bold text-3xl my-7 max-w-sm'>{post.title}</h1>
          <div
-            className='space-y-4 mt-5'
+            className={markdownStyles['markdown']}
             dangerouslySetInnerHTML={{ __html: post.content ?? '' }}
          />
       </Layout>

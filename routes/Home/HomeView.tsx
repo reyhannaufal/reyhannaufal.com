@@ -13,7 +13,8 @@ const stackStyles = {
       'w-7 h-7 text-primary hover:text-secondary hover:scale transition  ease-in-out transform hover:-translate-y-1 hover:scale-110',
 };
 
-export default function HomeView() {
+export default function HomeView({ posts }: any) {
+   console.log('%cHomeView.tsx line:17 post', 'color: #007acc;', posts);
    return (
       <>
          <section className='flex flex-col-reverse items-center py-4 sm:py-14 lg:flex-row'>
@@ -63,7 +64,7 @@ export default function HomeView() {
             </div>
 
             <div className='mt-8'>
-               {[0, 1, 2].map((i) => (
+               {posts?.map((i: any) => (
                   <div
                      key={i}
                      className='flex flex-col items-center p-10 border-[3px] sm:flex-row gap-x-32 rounded-xl mt-3'
@@ -80,20 +81,19 @@ export default function HomeView() {
                      </div>
                      <div className='sm:space-y-2'>
                         <h3 className='inline-block px-4 py-2 mt-8 mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm sm:mt-0 rounded-3xl'>
-                           Javascript
+                           {i.title}
                         </h3>
                         <h2 className='text-lg font-bold sm:text-xl'>
-                           Javascript Styleguide
+                           {i.title}
                         </h2>
                         <p className='text-sm sm:text-base text-coolGray'>
-                           Nullam risus blandit ac aliquam justo ipsum. Quam
-                           mauris volutpat massa dictumst amet. Sapien tortor
-                           lacus arcu.
+                           {i.description}
                         </p>
                         <div className='mt-5 text-sm sm:mt-0'>
                            <p className='font-medium text-gray-900 '>Bekasi</p>
                            <p className='font-normal text-gray-500 '>
-                              Mar 16, 2021 · 6 min read
+                              {new Date(i.date).toLocaleDateString()} · 6 min
+                              read
                            </p>
                         </div>
                      </div>
