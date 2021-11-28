@@ -1,19 +1,24 @@
-import type { NextPage } from 'next';
-
 import Layout from '@/components/Layout';
-import HomeView from '@/routes/Home/HomeView';
-import Seo from '@/components/Layout/LayoutSeo';
+import Link from 'next/link';
 import { getAllPosts } from '@/utils/posts';
+import Seo from '@/components/Layout/LayoutSeo';
 
-const Home: NextPage = ({ allPosts }: any) => {
-   console.log(allPosts);
+const meta = {
+   title: 'Blog | Reyhan Naufal Rahman',
+};
+
+export default function Blog({ allPosts }: any) {
    return (
       <Layout>
-         <Seo />
-         <HomeView posts={allPosts} />
+         <Seo title={meta.title} />
+         {allPosts.map((post: any) => (
+            <div key={post.slug}>
+               <Link href={`blog/${post.slug}`}>{post.title}</Link>
+            </div>
+         ))}
       </Layout>
    );
-};
+}
 
 export async function getStaticProps() {
    const allPosts = getAllPosts([
@@ -29,5 +34,3 @@ export async function getStaticProps() {
       props: { allPosts },
    };
 }
-
-export default Home;

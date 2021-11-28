@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { Post } from '@/pages/posts/[slug]';
+import { Post } from '@/pages/blog/[slug]';
 /**
  * Get all posts from folder from `_posts`
  */

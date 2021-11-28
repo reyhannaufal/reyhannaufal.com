@@ -6,6 +6,7 @@ import { classNames } from '@/utils/classNames';
 
 const headerList = [
    { id: '1', title: 'Home', href: '/' },
+   { id: '2', title: 'Blog', href: '/blog' },
    { id: '2', title: 'Projects', href: '/projects' },
 ];
 
@@ -18,12 +19,14 @@ export default function Header() {
    return (
       <header className='flex items-center justify-between py-5'>
          <div className='w-7 md:h-auto md:w-auto h-7'>
-            <Image
-               src='/reyhan-logo.svg'
-               alt='logo'
-               width={44.17}
-               height={43.91}
-            />
+            <Link href='/'>
+               <Image
+                  src='/reyhan-logo.svg'
+                  alt='logo'
+                  width={44.17}
+                  height={43.91}
+               />
+            </Link>
          </div>
          <div className='flex items-center space-x-4 text-xs font-medium text-gray-400 sm:text-sm'>
             {headerList.map((item) => (
