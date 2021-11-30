@@ -70,7 +70,7 @@ export default function HomeView({ posts }: { posts: Post[] }) {
                   <Link key={i.title} href={`blog/${i.slug}`}>
                      <div
                         key={i}
-                        className='flex flex-col items-center p-10 border-[3px] sm:flex-row gap-x-32 rounded-xl mt-3'
+                        className='flex flex-col items-center p-10 border-[3px] sm:flex-row gap-x-32 rounded-xl mt-3 hover:cursor-pointer hover:border-gray-700'
                      >
                         <div className='w-96'>
                            <Image

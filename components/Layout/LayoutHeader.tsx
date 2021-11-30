@@ -6,14 +6,19 @@ import { classNames } from '@/utils/classNames';
 
 const headerList = [
    { id: '1', title: 'Home', href: '/' },
-   // { id: '2', title: 'Blog', href: '/blog' },
-   { id: '2', title: 'Projects', href: '/project' },
+   { id: '2', title: 'Blog', href: '/blog' },
+   { id: '2', title: 'Projects', href: '/projects' },
 ];
 
 export default function Header() {
    const router = useRouter();
+   const { pathname } = router;
+   console.log(router.pathname.startsWith('/projects'));
    const isActiveLink = (href: string) => {
-      return router.pathname === href ? 'active' : '';
+      if (href === '/projects' || href === '/blog') {
+         return router.pathname.startsWith(href) ? 'active' : '';
+      }
+      return pathname === href ? 'active' : '';
    };
 
    return (
