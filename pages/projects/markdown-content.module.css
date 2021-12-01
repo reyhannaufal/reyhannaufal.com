@@ -33,3 +33,17 @@
    @apply p-1;
    @apply rounded;
 }
+
+@media screen and (max-width: 768px) {
+   .markdown p,
+   .markdown ul,
+   .markdown ol,
+   .markdown blockquote .markdown code {
+      font-size: 12px;
+   }
+
+   .markdown h1,
+   .markdown h2 {
+      font-size: 14px;
+   }
+}
