@@ -8,7 +8,7 @@ type LayoutInterface = {
 
 export default function Layout({ children }: LayoutInterface) {
    return (
-      <div className='max-w-md px-10 mx-auto sm:max-w-6xl'>
+      <div className='max-w-md px-10 mx-auto sm:max-w-5xl'>
          <Header />
          {children}
          <Footer />
