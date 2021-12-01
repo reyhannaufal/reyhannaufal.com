@@ -23,6 +23,7 @@ export async function getStaticProps() {
       'author' as never,
       'coverImage' as never,
       'excerpt' as never,
+      'type' as never,
    ]);
 
    return {
