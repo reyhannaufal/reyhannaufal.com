@@ -19,11 +19,8 @@ export function getPostBySlug(slug: string, fields = []) {
 
    const items = {};
 
-   console.log('%cposts.ts line:21 fields', 'color: #007acc;', typeof fields);
-
    // Ensure only the minimal needed data is exposed
    fields.forEach((field) => {
-      console.log(field);
       if (field === 'slug') {
          items[field] = realSlug as never;
       }

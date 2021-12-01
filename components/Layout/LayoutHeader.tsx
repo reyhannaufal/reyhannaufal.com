@@ -13,7 +13,6 @@ const headerList = [
 export default function Header() {
    const router = useRouter();
    const { pathname } = router;
-   console.log(router.pathname.startsWith('/projects'));
    const isActiveLink = (href: string) => {
       if (href === '/projects' || href === '/blog') {
          return router.pathname.startsWith(href) ? 'active' : '';
@@ -38,7 +37,7 @@ export default function Header() {
                <div
                   key={item.id}
                   className={classNames(
-                     'flex justify-center px-3 sm:px-5 py-2 rounded-md hover:text-gray-300',
+                     'flex justify-center px-3 sm:px-3 py-2 rounded-md hover:text-gray-300',
                      isActiveLink(item.href)
                         ? 'text-gray-100 bg-primary hover:text-gray-100'
                         : ''

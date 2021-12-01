@@ -3,10 +3,9 @@ import type { NextPage } from 'next';
 import Layout from '@/components/Layout';
 import HomeView from '@/routes/Home/HomeView';
 import Seo from '@/components/Layout/LayoutSeo';
-import { getAllPosts } from '@/utils/posts';
+import { getAllProjects } from '@/utils/projects';
 
 const Home: NextPage = ({ allPosts }: any) => {
-   console.log(allPosts);
    return (
       <Layout>
          <Seo />
@@ -16,7 +15,7 @@ const Home: NextPage = ({ allPosts }: any) => {
 };
 
 export async function getStaticProps() {
-   const allPosts = getAllPosts([
+   const allPosts = getAllProjects([
       'title' as never,
       'date' as never,
       'slug' as never,

@@ -50,8 +50,6 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 export async function getStaticPaths() {
    const posts = getAllProjects(['slug'] as never);
 
-   console.log(posts);
-
    return {
       paths: posts.map((post: any) => {
          return {
