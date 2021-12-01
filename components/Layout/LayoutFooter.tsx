@@ -17,7 +17,7 @@ const footerList = [
 export default function Footer() {
    return (
       <footer className='flex-col py-20 mx-auto text-center sm:pt-36 text-primary'>
-         <h2 className='max-w-3xl py-4 mx-auto text-lg font-bold border-t-2 rounded-sm '>
+         <h2 className='max-w-3xl py-4 mx-auto text-sm sm:text-lg font-bold border-t-2 rounded-sm '>
             Contact Me
          </h2>
          <div className='flex flex-row justify-center pb-3 space-x-2'>
@@ -32,7 +32,7 @@ export default function Footer() {
                </a>
             ))}
          </div>
-         <p>© Reyhan Naufal Rahman 2021 </p>
+         <p className='text-sm md:text-base'>© Reyhan Naufal Rahman 2021 </p>
       </footer>
    );
 }

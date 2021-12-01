@@ -9,6 +9,7 @@ type LayoutInterface = {
 export default function Layout({ children }: LayoutInterface) {
    return (
       <div
+      className='bg-fixed bg-cover bg-center bg-no-repeat'
          style={{
             backgroundImage: 'url(/background-layout.png)',
          }}

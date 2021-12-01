@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout';
+import Seo from '@/components/Layout/LayoutSeo';
 import markdownToHtml from '@/utils/markDownToHtml';
 import { getAllPosts, getPostBySlug } from '@/utils/posts';
 import { getAllProjects, getProjectBySlug } from '@/utils/projects';
@@ -14,13 +15,16 @@ export type Post = {
 
 export default function Posts({ post }: { post: Post }) {
    return (
-      <Layout>
-         <h1 className='font-bold text-3xl my-7 max-w-sm'>{post.title}</h1>
-         <div
-            className={markdownStyles['markdown']}
-            dangerouslySetInnerHTML={{ __html: post.content ?? '' }}
-         />
-      </Layout>
+      <>
+         <Seo title={`Projects | ${post.title}`} />
+         <Layout>
+            <h1 className='font-bold text-xl sm:text-3xl my-7 max-w-sm'>{post.title}</h1>
+            <div
+               className={markdownStyles['markdown']}
+               dangerouslySetInnerHTML={{ __html: post.content ?? '' }}
+            />
+         </Layout>
+      </>
    );
 }
 

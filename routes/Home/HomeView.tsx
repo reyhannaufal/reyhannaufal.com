@@ -71,13 +71,13 @@ export default function HomeView({ posts }: { posts: Post[] }) {
                   <Link key={i.title} href={`projects/${i.slug}`}>
                      <div
                         key={i}
-                        className='flex flex-col bg-gray-100 items-center p-10  sm:flex-row gap-x-32 rounded-xl mt-3 hover:cursor-pointer border-gray-300 text-black border-2'
+                        className='flex flex-col bg-gray-100 items-center px-7 py-5 sm:p-10  sm:flex-row gap-x-32 rounded-xl mt-3 hover:cursor-pointer border-gray-300 text-black border-2'
                      >
                         <div className='sm:space-y-5'>
                            <h2 className='text-lg mt-3 font-bold sm:text-2xl text-primary underline'>
                               {i.title}
                            </h2>
-                           <p className='text-sm sm:text-base text-gray-500'>
+                           <p className='text-sm mt-2 sm:mt-0 sm:text-base text-gray-500'>
                               {i.excerpt}
                            </p>
                            <div className='mt-5 text-sm sm:mt-0'>
@@ -88,7 +88,7 @@ export default function HomeView({ posts }: { posts: Post[] }) {
                                  {i.date} · 6 min read
                               </p>
                            </div>
-                           <h3 className=' inline-block px-4 py-2  mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm sm:mt-0 rounded-3xl'>
+                           <h3 className=' inline-block px-4 py-2  mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm mt-4 sm:mt-0 rounded-3xl'>
                               {i.type}
                            </h3>
                         </div>
