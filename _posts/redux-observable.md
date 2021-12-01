@@ -2,7 +2,7 @@
 title: 'Redux Observable'
 excerpt: 'RxJS-based middleware for Redux. Compose and cancel async actions to create side effects and more. https://redux-observable.js.org RxJS-based middleware for Redux. Compose and cancel async actions to create side effects and more. https://redux-observable.js.org'
 coverImage: '/assets/blog/preview/cover.jpg'
-date: '2021-03-16T05:35:07.322Z'
+date: December 1, 2021
 author:
    name: Reyhan Naufal Rahman
    picture: '/assets/blog/authors/joe.jpeg'

@@ -8,10 +8,16 @@ type LayoutInterface = {
 
 export default function Layout({ children }: LayoutInterface) {
    return (
-      <div className='max-w-md px-10 mx-auto sm:max-w-5xl'>
-         <Header />
-         {children}
-         <Footer />
+      <div
+         style={{
+            backgroundImage: 'url(/background-layout.png)',
+         }}
+      >
+         <div className='max-w-md px-10 mx-auto sm:max-w-5xl overflow-hidden z-10'>
+            <Header />
+            {children}
+            <Footer />
+         </div>
       </div>
    );
 }

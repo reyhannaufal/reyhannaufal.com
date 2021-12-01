@@ -16,7 +16,6 @@ const stackStyles = {
 };
 
 export default function HomeView({ posts }: { posts: Post[] }) {
-   console.log('%cHomeView.tsx line:17 post', 'color: #007acc;', posts);
    return (
       <>
          <section className='flex flex-col-reverse items-center py-4 sm:py-14 lg:flex-row'>
@@ -60,47 +59,38 @@ export default function HomeView({ posts }: { posts: Post[] }) {
          <section className='pt-10 pb-5 '>
             <div className='mt-20 space-y-1 text-center lg:mt-10 lg:text-left'>
                <h1 className='text-3xl font-bold lg:text-4xl text-primary'>
-                  The Blog
+                  Notable Projects
                </h1>
-               <p className='text-base font-normal'>Some notes made by me</p>
+               <p className='text-base font-normal'>
+                  Some cool projects that I have worked on!
+               </p>
             </div>
 
             <div className='mt-8'>
                {posts?.map((i: any) => (
-                  <Link key={i.title} href={`blog/${i.slug}`}>
+                  <Link key={i.title} href={`projects/${i.slug}`}>
                      <div
                         key={i}
-                        className='flex flex-col items-center p-10 border-[3px] sm:flex-row gap-x-32 rounded-xl mt-3 hover:cursor-pointer hover:border-gray-700'
+                        className='flex flex-col bg-gray-100 items-center p-10  sm:flex-row gap-x-32 rounded-xl mt-3 hover:cursor-pointer border-gray-300 text-black border-2'
                      >
-                        <div className='w-96'>
-                           <Image
-                              src='/laptop-illustrations.svg'
-                              placeholder='blur'
-                              blurDataURL='/laptop-illustrations.svg'
-                              height={189}
-                              width={222}
-                              alt='blog post'
-                           />
-                        </div>
-                        <div className='sm:space-y-2'>
-                           <h3 className='inline-block px-4 py-2 mt-8 mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm sm:mt-0 rounded-3xl'>
-                              {i.type}
-                           </h3>
-                           <h2 className='text-lg font-bold sm:text-xl'>
+                        <div className='sm:space-y-5'>
+                           <h2 className='text-lg mt-3 font-bold sm:text-2xl text-primary underline'>
                               {i.title}
                            </h2>
-                           <p className='text-sm sm:text-base text-coolGray'>
+                           <p className='text-sm sm:text-base text-gray-500'>
                               {i.excerpt}
                            </p>
                            <div className='mt-5 text-sm sm:mt-0'>
                               <p className='font-medium text-gray-900 '>
                                  {i.author.name}
                               </p>
-                              <p className='font-normal text-gray-500 '>
-                                 {new Date(i.date).toLocaleDateString()} · 6 min
-                                 read
+                              <p className='font-normal text-gray-500 mt-1'>
+                                 {i.date} · 6 min read
                               </p>
                            </div>
+                           <h3 className=' inline-block px-4 py-2  mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm sm:mt-0 rounded-3xl'>
+                              {i.type}
+                           </h3>
                         </div>
                      </div>
                   </Link>

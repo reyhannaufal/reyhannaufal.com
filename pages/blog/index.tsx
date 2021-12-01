@@ -28,8 +28,11 @@ export default function Blog({ allPosts }: any) {
                         <h1 className='font-bold text-4xl mt-3'>
                            {post.title}
                         </h1>
-                        <p className='mt-4 text-gray-400'>{post.excerpt}</p>
-                        <p className='mt-3 underline cursor-pointer text-gray-700'>
+                        <p className='mt-4 text-gray-500'>{post.excerpt}</p>
+                        <p className='mt-3 text-[13px] text-gray-500'>
+                           {post.date}
+                        </p>
+                        <p className='mt-6 underline cursor-pointer text-gray-700'>
                            Read More
                         </p>
                      </div>
@@ -37,6 +40,7 @@ export default function Blog({ allPosts }: any) {
                )}
             </div>
          ))}
+         <h2 className='font-bold text-3xl mt-20'>All Articles</h2>
          <div className='flex flex-col sm:flex-row sm:space-x-5'>
             {allPosts.map((post: any) => (
                <div key={post.slug}>
@@ -54,8 +58,11 @@ export default function Blog({ allPosts }: any) {
                            <h1 className='font-bold text-2xl mt-3'>
                               {post.title}
                            </h1>
-                           <p className='mt-4 text-gray-400'>{post.excerpt}</p>
-                           <p className='mt-3 underline cursor-pointer text-gray-7 00'>
+                           <p className='mt-4 text-gray-500'>{post.excerpt}</p>
+                           <p className='mt-3 text-[13px] text-gray-500'>
+                              {post.date}
+                           </p>
+                           <p className='mt-6 underline cursor-pointer text-gray-700'>
                               Read More
                            </p>
                         </div>
