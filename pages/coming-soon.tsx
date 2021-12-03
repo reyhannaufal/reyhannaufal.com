@@ -1,9 +1,11 @@
 import Layout from '@/components/Layout';
+import Seo from '@/components/Layout/LayoutSeo';
 import Link from 'next/link';
 
 export default function ComingSoon() {
    return (
       <Layout>
+         <Seo title='Coming Soon | Reyhan Naufal Rahman' />
          <div className='h-[60vh]'>
             <h1 className='font-bold text-4xl mt-20'>Coming Soon 😁</h1>
             <p>Something awesome is coming!</p>
