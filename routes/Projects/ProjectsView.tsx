@@ -10,7 +10,8 @@ export default function ProjectsView({ allProjects }: any) {
          <div className='flex flex-col sm:flex-row sm:space-x-5'>
             {allProjects.map((project: any) => (
                <div key={project.slug}>
-                  <Link href={`/projects/${project.slug}`}>
+                  {/* <Link href={`/projects/${project.slug}`}> */}
+                  <Link href='coming-soon' key={project.slug}>
                      <div className='my-10'>
                         <img
                            className='rounded-lg w-full sm:h-[250px] mb-5'

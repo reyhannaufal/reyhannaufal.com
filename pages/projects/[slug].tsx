@@ -5,6 +5,7 @@ import { getAllPosts, getPostBySlug } from '@/utils/posts';
 import { getAllProjects, getProjectBySlug } from '@/utils/projects';
 import markdownStyles from './markdown-content.module.css';
 
+
 export type Post = {
    slug?: string;
    title?: string;
