@@ -39,11 +39,11 @@
    .markdown ul,
    .markdown ol,
    .markdown blockquote .markdown code {
-      font-size: 12px;
+      font-size: 13px;
    }
 
    .markdown h1,
    .markdown h2 {
-      font-size: 14px;
+      font-size: 16px;
    }
 }

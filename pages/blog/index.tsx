@@ -15,7 +15,11 @@ export default function Blog({ allPosts }: any) {
          {allPosts.map((post: any) => (
             <div key={post.slug}>
                {post.new && (
-                  <Link href={`/blog/${post.slug}`} key={post.slug}>
+                  /**
+                   * Commment out for now
+                   */
+                  // <Link href={`/blog/${post.slug}`} key={post.slug}>
+                  <Link href='coming-soon' key={post.slug}>
                      <div className='my-10'>
                         <img
                            className='rounded-lg w-full  sm:h-[500px] mb-5'

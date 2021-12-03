@@ -68,7 +68,11 @@ export default function HomeView({ posts }: { posts: Post[] }) {
 
             <div className='mt-8'>
                {posts?.map((i: any) => (
-                  <Link key={i.title} href={`projects/${i.slug}`}>
+                  /**
+                   * Commment out for now
+                   */
+                  // <Link key={i.title} href={`projects/${i.slug}`}>
+                  <Link href='coming-soon' key={i.slug}>
                      <div
                         key={i}
                         className='flex flex-col bg-gray-100 items-center px-7 py-5 sm:p-10  sm:flex-row gap-x-32 rounded-xl mt-3 hover:cursor-pointer border-gray-300 text-black border-2'
