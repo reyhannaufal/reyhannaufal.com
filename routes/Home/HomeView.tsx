@@ -9,6 +9,7 @@ import {
    SiRedux,
    SiTypescript,
 } from 'react-icons/si';
+import CardView from '@/components/Card/CardView';
 
 const stackStyles = {
    styles:
@@ -56,6 +57,7 @@ export default function HomeView({ posts }: { posts: Post[] }) {
                </div>
             </div>
          </section>
+
          <section className='pt-10 pb-5 '>
             <div className='mt-20 space-y-1 text-center lg:mt-10 lg:text-left'>
                <h1 className='text-3xl font-bold lg:text-4xl text-primary'>
@@ -66,38 +68,9 @@ export default function HomeView({ posts }: { posts: Post[] }) {
                </p>
             </div>
 
-            <div className='mt-8'>
-               {posts?.map((i: any) => (
-                  /**
-                   * Commment out for now
-                   */
-                  // <Link key={i.title} href={`projects/${i.slug}`}>
-                  <Link href='coming-soon' key={i.slug}>
-                     <div
-                        key={i}
-                        className='flex flex-col bg-gray-100 items-center px-7 py-5 sm:p-10  sm:flex-row gap-x-32 rounded-xl mt-3 hover:cursor-pointer border-gray-300 text-black border-2'
-                     >
-                        <div className='sm:space-y-5'>
-                           <h2 className='text-lg mt-3 font-bold sm:text-2xl text-primary underline'>
-                              {i.title}
-                           </h2>
-                           <p className='text-sm mt-2 sm:mt-0 sm:text-base text-gray-500'>
-                              {i.excerpt}
-                           </p>
-                           <div className='mt-5 text-sm sm:mt-0'>
-                              <p className='font-medium text-gray-900 '>
-                                 {i.author.name}
-                              </p>
-                              <p className='font-normal text-gray-500 mt-1'>
-                                 {i.date} · 6 min read
-                              </p>
-                           </div>
-                           <h3 className=' inline-block px-4 py-2  mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm mt-4 sm:mt-0 rounded-3xl'>
-                              {i.type}
-                           </h3>
-                        </div>
-                     </div>
-                  </Link>
+            <div className='flex flex-col sm:flex-row sm:space-x-5 mt-8'>
+               {posts?.map((item: any) => (
+                  <CardView item={item} isProjectCard />
                ))}
             </div>
          </section>

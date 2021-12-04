@@ -5,13 +5,14 @@ import { getAllPosts, getPostBySlug } from '@/utils/posts';
 import { getAllProjects, getProjectBySlug } from '@/utils/projects';
 import markdownStyles from './markdown-content.module.css';
 
-
 export type Post = {
    slug?: string;
    title?: string;
    content?: string;
    createdAt?: string;
    date?: string;
+   coverImage?: string;
+   author?: any;
 };
 
 export default function Posts({ post }: { post: Post }) {
@@ -19,7 +20,17 @@ export default function Posts({ post }: { post: Post }) {
       <>
          <Seo title={`Projects | ${post.title}`} />
          <Layout>
-            <h1 className='font-bold text-xl sm:text-3xl my-7 max-w-sm'>{post.title}</h1>
+            <h1 className='font-bold text-xl sm:text-3xl mt-7'>{post.title}</h1>
+            <div className='flex mt-2 mb-4 space-x-2 text-gray-500'>
+               <p>{post.author.name}</p>
+               <p>-</p>
+               <p>{post.date}</p>
+            </div>
+            <img
+               src={post.coverImage}
+               alt={post.title}
+               className='w-full h-[400px] rounded-lg object-cover mb-10'
+            />
             <div
                className={markdownStyles['markdown']}
                dangerouslySetInnerHTML={{ __html: post.content ?? '' }}
