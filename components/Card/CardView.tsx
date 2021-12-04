@@ -18,7 +18,7 @@ export default function CardView({ item, isProjectCard }: CardViewProps) {
    return (
       <>
          <Link href={slug} key={item.slug}>
-            <div className='my-10'>
+            <div className='my-10 max-w-[500px]'>
                <img
                   className='rounded-lg w-full h-[250px] mb-5 object-cover'
                   src={item.coverImage}

@@ -16,14 +16,15 @@ export default function Blog({ allPosts }: any) {
          {allPosts.map((post: any) => (
             <div key={post.slug}>
                {post.new && (
-                  <Link href={`/blog/${post.slug}`} key={post.slug}>
+                  <Link href='coming-soon' key={post.slug}>
+                     {/* <Link href={`/blog/${post.slug}`} key={post.slug}> */}
                      <div className='my-10'>
                         <img
                            className='rounded-lg w-full h-[250px] object-cover sm:h-[500px] mb-5'
                            src={post.coverImage}
                            alt={post.title}
                         />
-                        <h3 className='inline-block 2 px-4 py-2 sm:mt-8 mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm  rounded-3xl'>
+                        <h3 className='inline-block 2 px-4 py-2  mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm  rounded-3xl'>
                            {post.type}
                         </h3>
                         <h1 className='font-bold text-xl sm:text-4xl mt-3'>
