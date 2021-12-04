@@ -7,7 +7,7 @@ export default function ComingSoon() {
       <Layout>
          <Seo title='Coming Soon | Reyhan Naufal Rahman' />
          <div className='h-[60vh]'>
-            <h1 className='font-bold text-4xl mt-20'>Coming Soon 😁</h1>
+            <h1 className='font-bold text-4xl mt-20'>Coming Soon</h1>
             <p>Something awesome is coming!</p>
 
             <Link href='/'>

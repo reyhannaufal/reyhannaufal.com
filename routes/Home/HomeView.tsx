@@ -68,7 +68,7 @@ export default function HomeView({ posts }: { posts: Post[] }) {
                </p>
             </div>
 
-            <div className='flex flex-col sm:flex-row sm:space-x-5 mt-8'>
+            <div className='flex flex-col sm:flex-row sm:space-x-5'>
                {posts?.map((item: any) => (
                   <CardView item={item} isProjectCard />
                ))}

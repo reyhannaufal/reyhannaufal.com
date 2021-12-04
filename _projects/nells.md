@@ -1,6 +1,6 @@
 ---
 title: 'Nells Project'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
+excerpt: 'Nells is a web application that helps people to be aware of armpit diseases, by providing information about the diseases and their symptoms. The application is built with ReactJS, NextJS, and TailwindCSS.'
 coverImage: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80'
 date: December 1, 2021
 author:
@@ -11,18 +11,17 @@ ogImage:
 type: 'Frontend'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+## Project Description
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+Nells is a web application that helps people to be aware of armpit diseases, by providing information about the diseases and their symptoms. The application is built with ReactJS, NextJS, and TailwindCSS. This project's my first time to be worked with UI/UX designer, he is a friend of mine called Rifqiandi Cesario Putra. I'm very proud to be able to work with him.
 
-## Lorem Ipsum
+You can access the source code of this project [here](github.com/reyhanrahman/nells) and feel free to check out the website [here](https://nells.netlify.app/). If you have any questions, feel free to contact me at [linkedin](https://linkedin.com/in/reyhan-naufal).
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+## Leason Learned
 
-```
-const a = 1
-```
+Something that I learned from this project is, it is important to have good communication with the designer because every pixel matter to him. Overall working with Rifqi is such a great experience.
 
----
+Using CMS will be great for this project because it will be easier to manage the content. But I'm not implementing it because:
 
-I **love** using [Next.js](https://nextjs.org/)
+1. I don't have the time to do so
+2. It's just one time use only application.

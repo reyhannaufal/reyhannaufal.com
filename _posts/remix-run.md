@@ -1,6 +1,6 @@
 ---
 title: 'Remix Run'
-excerpt: 'RxJS-based middleware for Redux. Compose and cancel async actions to create side effects and more. https://redux-observable.js.org RxJS-based middleware for Redux. Compose and cancel async actions to create side effects and more. https://redux-observable.js.org'
+excerpt: 'Remix is a full stack web framework that lets you focus on the user interface and work back through web fundamentals to deliver a fast, slick, and resilient user experience. People are gonna love using your stuff.'
 coverImage: 'https://images.unsplash.com/photo-1533561797500-4fad4750814e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
 date: December 1, 2021
 author:
