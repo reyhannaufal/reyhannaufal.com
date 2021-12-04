@@ -19,7 +19,7 @@ You can access the source code of this project [here](github.com/reyhanrahman/ne
 
 ## Leason Learned
 
-Something that I learned from this project is, it is important to have good communication with the designer because every pixel matter to him. Overall working with Rifqi is such a great experience.
+Something that I learned from this project is, that it's important to have good communication with the designer because every pixel matter to him. Overall working with Rifqi is such a great experience.
 
 Using CMS will be great for this project because it will be easier to manage the content. But I'm not implementing it because:
 

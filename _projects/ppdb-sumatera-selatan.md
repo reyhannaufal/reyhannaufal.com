@@ -28,4 +28,4 @@ You can access the project by clicking the text below.
 
 ## Leason Learned
 
-Something that i learned from this project is that it is very important to have a good understanding of the tech stack that we used to develop the project. Also writing test cases is very important because it will help us to improve the quality of the project.
+Something that i learned from this project is, that it's very important to have a good understanding of the tech stack that we used to develop the project. Also writing test cases is very important because it will help us to improve the quality of the project.
