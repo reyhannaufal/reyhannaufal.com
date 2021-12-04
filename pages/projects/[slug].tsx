@@ -21,7 +21,7 @@ export default function Posts({ post }: { post: Post }) {
          <Seo title={`Projects | ${post.title}`} />
          <Layout>
             <h1 className='font-bold text-xl sm:text-3xl mt-7'>{post.title}</h1>
-            <div className='flex mt-2 mb-4 space-x-2 text-gray-500'>
+            <div className='flex text-xs sm:text-base mt-2 mb-4 space-x-2 text-gray-500'>
                <p>{post.author.name}</p>
                <p>-</p>
                <p>{post.date}</p>
