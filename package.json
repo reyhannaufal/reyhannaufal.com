@@ -10,8 +10,8 @@
       "postbuild": "next-sitemap"
    },
    "dependencies": {
-      "@tailwindcss/aspect-ratio": "^0.2.1",
-      "@tailwindcss/forms": "^0.3.4",
+      "@tailwindcss/aspect-ratio": "^0.4.0",
+      "@tailwindcss/forms": "^0.4.0",
       "@tanem/react-nprogress": "^3.0.81",
       "@types/styled-components": "^5.1.15",
       "autoprefixer": "^10.4.0",
