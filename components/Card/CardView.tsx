@@ -14,7 +14,7 @@ type CardViewProps = {
 };
 
 export default function CardView({ item, isProjectCard }: CardViewProps) {
-   const slug = isProjectCard ? `/projects/${item.slug}` : `/blog/${item.slug}`;
+   const slug = isProjectCard ? `coming-soon` : `/blog/${item.slug}`;
    return (
       <>
          <Link href={slug} key={item.slug}>
