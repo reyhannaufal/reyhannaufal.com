@@ -1,5 +1,5 @@
-import Layout from '@/components/Layout';
-import Seo from '@/components/Layout/LayoutSeo';
+import Layout from '@/src/components/Layout';
+import Seo from '@/src/components/Layout/LayoutSeo';
 import Link from 'next/link';
 
 export default function ComingSoon() {
