@@ -2,7 +2,7 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 
-const projectsDirectory = join(process.cwd(), '_projects');
+const projectsDirectory = join(process.cwd(), 'src/data/projects');
 
 export function getProjectsSlugs() {
    return fs.readdirSync(projectsDirectory);

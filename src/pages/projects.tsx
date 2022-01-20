@@ -1,7 +1,7 @@
-import Layout from '@/components/Layout';
-import Seo from '@/components/Layout/LayoutSeo';
-import ProjectsView from '@/routes/Projects/ProjectsView';
-import { getAllProjects } from '@/utils/projects';
+import { getAllProjects } from '@/src/utils/projects';
+import Layout from '@/src/components/Layout';
+import Seo from '@/src/components/Layout/LayoutSeo';
+import ProjectsView from '@/src/routes/Projects/ProjectsView';
 
 const meta = {
    title: 'Projects | Reyhan Naufal Rahman',

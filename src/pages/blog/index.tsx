@@ -1,9 +1,9 @@
-import Layout from '@/components/Layout';
 import Link from 'next/link';
-import { getAllPosts } from '@/utils/posts';
-import Seo from '@/components/Layout/LayoutSeo';
+import { getAllPosts } from '@/src/utils/posts';
 import Image from 'next/image';
-import CardView from '@/components/Card/CardView';
+import Layout from '@/src/components/Layout';
+import Seo from '@/src/components/Layout/LayoutSeo';
+import CardView from '@/src/components/Card/CardView';
 
 const meta = {
    title: 'Blog | Reyhan Naufal Rahman',

@@ -1,4 +1,4 @@
-import { Post } from '@/pages/blog/[slug]';
+import { Post } from '@/src/pages/blog/[slug]';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -9,7 +9,7 @@ import {
    SiRedux,
    SiTypescript,
 } from 'react-icons/si';
-import CardView from '@/components/Card/CardView';
+import CardView from '@/src/components/Card/CardView';
 
 const stackStyles = {
    styles:
