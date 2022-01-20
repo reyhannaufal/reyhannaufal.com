@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 
-import Layout from '@/components/Layout';
-import HomeView from '@/routes/Home/HomeView';
-import Seo from '@/components/Layout/LayoutSeo';
-import { getAllProjects } from '@/utils/projects';
+import { getAllProjects } from '@/src/utils/projects';
+import Layout from '@/src/components/Layout';
+import Seo from '@/src/components/Layout/LayoutSeo';
+import HomeView from '@/src/routes/Home/HomeView';
 
 const Home: NextPage = ({ allPosts }: any) => {
    return (

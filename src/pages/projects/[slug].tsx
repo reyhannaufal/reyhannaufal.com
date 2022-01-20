@@ -1,8 +1,7 @@
-import Layout from '@/components/Layout';
-import Seo from '@/components/Layout/LayoutSeo';
-import markdownToHtml from '@/utils/markDownToHtml';
-import { getAllPosts, getPostBySlug } from '@/utils/posts';
-import { getAllProjects, getProjectBySlug } from '@/utils/projects';
+import Layout from '@/src/components/Layout';
+import Seo from '@/src/components/Layout/LayoutSeo';
+import markdownToHtml from '@/src/utils/markDownToHtml';
+import { getAllProjects, getProjectBySlug } from '@/src/utils/projects';
 import markdownStyles from './markdown-content.module.css';
 
 export type Post = {

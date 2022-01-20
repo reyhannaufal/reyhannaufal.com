@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { classNames } from '@/utils/classNames';
+import { classNames } from '@/src/utils/classNames';
 
 const headerList = [
    { id: '1', title: 'Home', href: '/' },

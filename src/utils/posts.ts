@@ -1,11 +1,11 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { Post } from '@/pages/blog/[slug]';
+import { Post } from '@/src/pages/blog/[slug]';
 /**
- * Get all posts from folder from `_posts`
+ * Get all posts from folder from `posts`
  */
-const postsDirectory = join(process.cwd(), '_posts');
+const postsDirectory = join(process.cwd(), 'src/data/posts');
 
 export function getPostSlugs() {
    return fs.readdirSync(postsDirectory);

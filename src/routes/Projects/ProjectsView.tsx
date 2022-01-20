@@ -1,4 +1,4 @@
-import CardView from '@/components/Card/CardView';
+import CardView from '@/src/components/Card/CardView';
 
 export default function ProjectsView({ allProjects }: any) {
    return (
