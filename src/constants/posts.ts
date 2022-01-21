@@ -1,5 +1,7 @@
 export interface Post {
-   author: {};
+   author: {
+      name: string;
+   };
    coverImage: string;
    date: string;
    excerpt: string;
@@ -7,4 +9,6 @@ export interface Post {
    title: string;
    type: string;
    image: string;
+   new: boolean;
+   content: string;
 }

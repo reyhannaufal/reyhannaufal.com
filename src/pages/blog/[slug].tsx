@@ -1,8 +1,9 @@
+import React from 'react';
+
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 import markdownToHtml from '@/src/utils/markDownToHtml';
 import { getAllMdxFiles, getMdxFileBySlug } from '@/src/utils/mdx';
-import Image from 'next/image';
 import markdownStyles from './markdown-content.module.css';
 
 export type Post = {
@@ -12,17 +13,23 @@ export type Post = {
    createdAt?: string;
    date?: string;
    coverImage?: string;
-   author?: any;
+   author?: {
+      name: string;
+   };
 };
 
-export default function Posts({ post }: { post: Post }) {
+interface BlogBySlugViewProps {
+   post: Post;
+}
+
+export default function BlogBySlug({ post }: BlogBySlugViewProps) {
    return (
       <>
          <Seo title={`Blog | ${post.title}`} />
          <Layout>
             <h1 className='font-bold text-xl sm:text-3xl mt-7'>{post.title}</h1>
             <div className='flex text-xs sm:text-base mt-2 mb-4 space-x-2 text-gray-500'>
-               <p>{post.author.name}</p>
+               <p>{post?.author?.name}</p>
                <p>-</p>
                <p>{post.date}</p>
             </div>
@@ -52,7 +59,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
    ];
    const post: Post = getMdxFileBySlug(
       params.slug,
-      postFields as any,
+      postFields as [],
       'src/data/posts'
    );
    const content = await markdownToHtml(post.content || '');
@@ -71,7 +78,7 @@ export async function getStaticPaths() {
    const posts = getAllMdxFiles(['slug'] as never, 'src/data/posts');
 
    return {
-      paths: posts.map((post: any) => {
+      paths: posts.map((post: Post) => {
          return {
             params: {
                slug: post.slug,

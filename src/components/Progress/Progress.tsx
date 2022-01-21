@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNProgress } from '@tanem/react-nprogress';
 
 import { Bar } from './ProgressBar';

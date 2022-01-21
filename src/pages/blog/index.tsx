@@ -1,18 +1,24 @@
+import React from 'react';
 import Link from 'next/link';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 import CardView from '@/src/components/Card/CardView';
 import { getAllMdxFiles } from '@/src/utils/mdx';
+import { Post } from '@/src/constants/posts';
 
 const meta = {
    title: 'Blog | Reyhan Naufal Rahman',
 };
 
-export default function Blog({ allPosts }: any) {
+interface BlogViewProps {
+   posts: Post[];
+}
+
+export default function Blog({ posts }: BlogViewProps) {
    return (
       <Layout>
          <Seo title={meta.title} />
-         {allPosts.map((post: any) => (
+         {posts.map((post: Post) => (
             <div key={post.slug}>
                {post.new && (
                   <Link href='coming-soon' key={post.slug}>
@@ -43,7 +49,7 @@ export default function Blog({ allPosts }: any) {
          ))}
          <h2 className='font-bold text-3xl mt-20'>All Articles</h2>
          <div className='flex flex-col sm:flex-row sm:space-x-5'>
-            {allPosts.map((post: any) => (
+            {posts.map((post: Post) => (
                <div key={post.slug}>
                   {!post.new && <CardView item={post} />}
                </div>
@@ -54,7 +60,7 @@ export default function Blog({ allPosts }: any) {
 }
 
 export async function getStaticProps() {
-   const allPosts = getAllMdxFiles(
+   const posts = getAllMdxFiles(
       [
          'title',
          'date',
@@ -69,6 +75,6 @@ export async function getStaticProps() {
    );
 
    return {
-      props: { allPosts },
+      props: { posts },
    };
 }
