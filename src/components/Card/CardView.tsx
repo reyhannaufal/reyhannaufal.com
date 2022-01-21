@@ -1,16 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+import { Post } from '@/src/constants/posts';
 
 type CardViewProps = {
-   item: {
-      slug: string;
-      title: string;
-      type: string;
-      image: string;
-      excerpt: string;
-      date: string;
-      coverImage: string;
-   };
+   item: Post;
    isProjectCard?: boolean;
 };
 

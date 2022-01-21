@@ -3,7 +3,7 @@ export interface Post {
    type?: string;
    image?: string;
    new?: boolean;
-   slug?: string;
+   slug?: string | undefined;
    title?: string;
    content?: string;
    createdAt?: string;
