@@ -1,3 +1,4 @@
+import React from 'react';
 import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io';
 
 const footerLogoSize = 'w-7 h-7';
