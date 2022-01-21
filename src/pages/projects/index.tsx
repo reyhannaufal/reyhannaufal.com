@@ -1,3 +1,4 @@
+import React from 'react';
 import CardView from '@/src/components/Card/CardView';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';

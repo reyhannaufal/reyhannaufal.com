@@ -1,3 +1,4 @@
+import React from 'react';
 import Image from 'next/image';
 import {
    SiJavascript,
@@ -10,7 +11,6 @@ import {
 import CardView from '@/src/components/Card/CardView';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
-import { Post } from '../constants/posts';
 import { getAllMdxFiles } from '../utils/mdx';
 import { Project } from '../constants/projects';
 
@@ -29,7 +29,7 @@ const Home = ({ projects }: HomeViewProps) => (
       <section className='flex flex-col-reverse items-center py-4 sm:py-14 lg:flex-row'>
          <div className='max-w-lg text-left'>
             <div className='space-y-1 md:space-y-2'>
-               <p className='mt-2 text-sm font-bold lg:mt-0'>Hey, I'm</p>
+               <p className='mt-2 text-sm font-bold lg:mt-0'>Hey, I&aposm</p>
                <h1 className='max-w-[300px] md:max-w-[500px] lg:max-w-sm  text-left lg:mx-0 text-2xl md:text-3xl font-bold  lg:text-4xl text-primary'>
                   Reyhan Naufal Rahman
                </h1>
@@ -76,8 +76,8 @@ const Home = ({ projects }: HomeViewProps) => (
          </div>
 
          <div className='flex flex-col sm:flex-row sm:space-x-5'>
-            {projects?.map((item: any) => (
-               <CardView item={item} isProjectCard />
+            {projects?.map((item: Project, id: number) => (
+               <CardView item={item} key={id} isProjectCard />
             ))}
          </div>
       </section>

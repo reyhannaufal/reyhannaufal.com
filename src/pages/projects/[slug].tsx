@@ -1,31 +1,24 @@
+import React from 'react';
+
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 import markdownToHtml from '@/src/utils/markDownToHtml';
-import {
-   getAllMdxFiles,
-   getMdxFileBySlug,
-   getMdxFilesSlug,
-} from '@/src/utils/mdx';
+import { getAllMdxFiles, getMdxFileBySlug } from '@/src/utils/mdx';
 import markdownStyles from './markdown-content.module.css';
+import { Post } from '@/src/constants/posts';
 
-export type Post = {
-   slug?: string;
-   title?: string;
-   content?: string;
-   createdAt?: string;
-   date?: string;
-   coverImage?: string;
-   author?: any;
-};
+export interface ProjectBySlugViewProps {
+   post: Post;
+}
 
-export default function Posts({ post }: { post: Post }) {
+export default function ProjectBySlug({ post }: ProjectBySlugViewProps) {
    return (
       <>
          <Seo title={`Projects | ${post.title}`} />
          <Layout>
             <h1 className='font-bold text-xl sm:text-3xl mt-7'>{post.title}</h1>
             <div className='flex text-xs sm:text-base mt-2 mb-4 space-x-2 text-gray-500'>
-               <p>{post.author.name}</p>
+               <p>{post?.author?.name}</p>
                <p>-</p>
                <p>{post.date}</p>
             </div>
@@ -54,9 +47,9 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       'coverImage',
    ];
 
-   const post: Post = getMdxFileBySlug(
+   const post: any = getMdxFileBySlug(
       params.slug,
-      postFields as any,
+      postFields as [],
       'src/data/projects'
    );
    const content = await markdownToHtml(post.content || '');
@@ -75,13 +68,11 @@ export async function getStaticPaths() {
    const posts = getAllMdxFiles(['slug'] as never, 'src/data/projects');
 
    return {
-      paths: posts.map((post: any) => {
-         return {
-            params: {
-               slug: post.slug,
-            },
-         };
-      }),
+      paths: posts.map((post) => ({
+         params: {
+            slug: post.slug,
+         },
+      })),
       fallback: false,
    };
 }
