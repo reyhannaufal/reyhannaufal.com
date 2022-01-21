@@ -38,7 +38,7 @@ export const getAllMdxFiles = (fields = [], source: string) => {
       date?: string;
    };
    const posts = slugs
-      .map((slug: any) => getMdxFileBySlug(slug, fields, source))
+      .map((slug: string) => getMdxFileBySlug(slug, fields, source))
       .sort((firstPost: AllPosts, secondPost: AllPosts) =>
          firstPost.date ?? '' > (secondPost.date ?? '') ? -1 : 1
       );

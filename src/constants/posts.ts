@@ -1,14 +1,15 @@
 export interface Post {
-   author: {
+   excerpt?: string;
+   type?: string;
+   image?: string;
+   new?: boolean;
+   slug?: string;
+   title?: string;
+   content?: string;
+   createdAt?: string;
+   date?: string;
+   coverImage?: string;
+   author?: {
       name: string;
    };
-   coverImage: string;
-   date: string;
-   excerpt: string;
-   slug: string;
-   title: string;
-   type: string;
-   image: string;
-   new: boolean;
-   content: string;
 }

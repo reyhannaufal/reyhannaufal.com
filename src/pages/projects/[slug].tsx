@@ -6,6 +6,7 @@ import markdownToHtml from '@/src/utils/markDownToHtml';
 import { getAllMdxFiles, getMdxFileBySlug } from '@/src/utils/mdx';
 import markdownStyles from './markdown-content.module.css';
 import { Post } from '@/src/constants/posts';
+import { Project } from '@/src/constants/projects';
 
 export interface ProjectBySlugViewProps {
    post: Post;
@@ -47,7 +48,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       'coverImage',
    ];
 
-   const post: any = getMdxFileBySlug(
+   const post: Project = getMdxFileBySlug(
       params.slug,
       postFields as [],
       'src/data/projects'
@@ -65,13 +66,13 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 export async function getStaticPaths() {
-   const posts = getAllMdxFiles(['slug'] as never, 'src/data/projects');
+   const projects = getAllMdxFiles(['slug'] as never, 'src/data/projects');
 
    return {
-      paths: posts.map((post: any) => {
+      paths: projects.map((project: Project) => {
          return {
             params: {
-               slug: post.slug,
+               slug: project.slug,
             },
          };
       }),

@@ -5,18 +5,7 @@ import Seo from '@/src/components/Layout/LayoutSeo';
 import markdownToHtml from '@/src/utils/markDownToHtml';
 import { getAllMdxFiles, getMdxFileBySlug } from '@/src/utils/mdx';
 import markdownStyles from './markdown-content.module.css';
-
-export type Post = {
-   slug?: string;
-   title?: string;
-   content?: string;
-   createdAt?: string;
-   date?: string;
-   coverImage?: string;
-   author?: {
-      name: string;
-   };
-};
+import { Post } from '@/src/constants/posts';
 
 interface BlogBySlugViewProps {
    post: Post;

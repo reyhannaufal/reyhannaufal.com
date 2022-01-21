@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
    );
    const isAnimating = useProgressStore((state: any) => state?.isAnimating);
 
-   const HandleLoadingScreen = () => {
+   const handleLoadingScreen = () => {
       const handleStart = () => {
          setIsAnimating(true);
       };
@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
    };
 
    useEffect(() => {
-      HandleLoadingScreen();
+      handleLoadingScreen();
    }, [router]);
 
    return (
