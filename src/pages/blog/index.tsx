@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/src/utils/posts';
-import Image from 'next/image';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 import CardView from '@/src/components/Card/CardView';
@@ -56,15 +55,15 @@ export default function Blog({ allPosts }: any) {
 
 export async function getStaticProps() {
    const allPosts = getAllPosts([
-      'title' as never,
-      'date' as never,
-      'slug' as never,
-      'author' as never,
-      'coverImage' as never,
-      'excerpt' as never,
-      'type' as never,
-      'new' as never,
-   ]);
+      'title',
+      'date',
+      'slug',
+      'author',
+      'coverImage',
+      'excerpt',
+      'type',
+      'new',
+   ] as never);
 
    return {
       props: { allPosts },
