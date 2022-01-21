@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { getAllPosts } from '@/src/utils/posts';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 import CardView from '@/src/components/Card/CardView';
+import { getAllMdxFiles } from '@/src/utils/mdx';
 
 const meta = {
    title: 'Blog | Reyhan Naufal Rahman',
@@ -54,16 +54,19 @@ export default function Blog({ allPosts }: any) {
 }
 
 export async function getStaticProps() {
-   const allPosts = getAllPosts([
-      'title',
-      'date',
-      'slug',
-      'author',
-      'coverImage',
-      'excerpt',
-      'type',
-      'new',
-   ] as never);
+   const allPosts = getAllMdxFiles(
+      [
+         'title',
+         'date',
+         'slug',
+         'author',
+         'coverImage',
+         'excerpt',
+         'type',
+         'new',
+      ] as never,
+      'src/data/posts'
+   );
 
    return {
       props: { allPosts },

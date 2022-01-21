@@ -1,7 +1,11 @@
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 import markdownToHtml from '@/src/utils/markDownToHtml';
-import { getAllProjects, getProjectBySlug } from '@/src/utils/projects';
+import {
+   getAllMdxFiles,
+   getMdxFileBySlug,
+   getMdxFilesSlug,
+} from '@/src/utils/mdx';
 import markdownStyles from './markdown-content.module.css';
 
 export type Post = {
@@ -49,7 +53,12 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       'ogImage',
       'coverImage',
    ];
-   const post: Post = getProjectBySlug(params.slug, postFields as any);
+
+   const post: Post = getMdxFileBySlug(
+      params.slug,
+      postFields as any,
+      'src/data/projects'
+   );
    const content = await markdownToHtml(post.content || '');
 
    return {
@@ -63,7 +72,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 export async function getStaticPaths() {
-   const posts = getAllProjects(['slug'] as never);
+   const posts = getAllMdxFiles(['slug'] as never, 'src/data/projects');
 
    return {
       paths: posts.map((post: any) => {
