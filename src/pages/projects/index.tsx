@@ -2,8 +2,7 @@ import CardView from '@/src/components/Card/CardView';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 import { Project } from '@/src/constants/projects';
-
-import { getAllProjects } from '@/src/utils/projects';
+import { getAllMdxFiles } from '@/src/utils/mdx';
 
 const meta = {
    title: 'Projects | Reyhan Naufal Rahman',
@@ -35,15 +34,18 @@ export default function Projects({ projects }: ProjectsViewProps) {
 }
 
 export async function getStaticProps() {
-   const projects = getAllProjects([
-      'title',
-      'date',
-      'slug',
-      'author',
-      'coverImage',
-      'excerpt',
-      'type',
-   ] as never);
+   const projects = getAllMdxFiles(
+      [
+         'title',
+         'date',
+         'slug',
+         'author',
+         'coverImage',
+         'excerpt',
+         'type',
+      ] as never,
+      'src/data/projects'
+   );
 
    return {
       props: { projects },

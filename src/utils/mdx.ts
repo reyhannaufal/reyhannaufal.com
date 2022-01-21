@@ -1,25 +1,21 @@
-import fs from 'fs';
 import { join } from 'path';
+import fs from 'fs';
 import matter from 'gray-matter';
-import { Post } from '@/src/pages/blog/[slug]';
-/**
- * Get all posts from folder from `posts`
- */
-const postsDirectory = join(process.cwd(), 'src/data/posts');
 
-export function getPostSlugs() {
-   return fs.readdirSync(postsDirectory);
+export const folderDirectory = (source: string) => join(process.cwd(), source);
+
+export function getMdxFilesSlug(source: string) {
+   return fs.readdirSync(folderDirectory(source));
 }
 
-export function getPostBySlug(slug: string, fields = []) {
+export function getMdxFileBySlug(slug: string, fields = [], source: string) {
    const realSlug = slug.replace(/\.md$/, '');
-   const fullPath = join(postsDirectory, `${realSlug}.md`);
+   const fullPath = join(folderDirectory(source), `${realSlug}.md`);
    const fileContents = fs.readFileSync(fullPath, 'utf8');
    const { data, content } = matter(fileContents);
 
    const items = {};
 
-   // Ensure only the minimal needed data is exposed
    fields.forEach((field) => {
       if (field === 'slug') {
          items[field] = realSlug as never;
@@ -36,16 +32,15 @@ export function getPostBySlug(slug: string, fields = []) {
    return items;
 }
 
-export function getAllPosts(fields = []) {
-   const slugs = getPostSlugs();
+export const getAllMdxFiles = (fields = [], source: string) => {
+   const slugs = getMdxFilesSlug(source);
    type AllPosts = {
       date?: string;
    };
    const posts = slugs
-      .map((slug: any) => getPostBySlug(slug, fields))
-      // sort posts by date in descending order
+      .map((slug: any) => getMdxFileBySlug(slug, fields, source))
       .sort((firstPost: AllPosts, secondPost: AllPosts) =>
          firstPost.date ?? '' > (secondPost.date ?? '') ? -1 : 1
       );
    return posts;
-}
+};

@@ -1,4 +1,3 @@
-import type { NextPage } from 'next';
 import Image from 'next/image';
 import {
    SiJavascript,
@@ -11,8 +10,9 @@ import {
 import CardView from '@/src/components/Card/CardView';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
-import { getAllProjects } from '@/src/utils/projects';
 import { Post } from '../constants/posts';
+import { getAllMdxFiles } from '../utils/mdx';
+import { Project } from '../constants/projects';
 
 const stackStyles = {
    styles:
@@ -20,10 +20,10 @@ const stackStyles = {
 };
 
 interface HomeViewProps {
-   posts: Post[];
+   projects: Project[];
 }
 
-const Home = ({ posts }: HomeViewProps) => (
+const Home = ({ projects }: HomeViewProps) => (
    <Layout>
       <Seo />
       <section className='flex flex-col-reverse items-center py-4 sm:py-14 lg:flex-row'>
@@ -76,7 +76,7 @@ const Home = ({ posts }: HomeViewProps) => (
          </div>
 
          <div className='flex flex-col sm:flex-row sm:space-x-5'>
-            {posts?.map((item: any) => (
+            {projects?.map((item: any) => (
                <CardView item={item} isProjectCard />
             ))}
          </div>
@@ -85,18 +85,21 @@ const Home = ({ posts }: HomeViewProps) => (
 );
 
 export async function getStaticProps() {
-   const posts = getAllProjects([
-      'title',
-      'date',
-      'slug',
-      'author',
-      'coverImage',
-      'excerpt',
-      'type',
-   ] as never);
+   const projects = getAllMdxFiles(
+      [
+         'title',
+         'date',
+         'slug',
+         'author',
+         'coverImage',
+         'excerpt',
+         'type',
+      ] as never,
+      'src/data/projects'
+   );
 
    return {
-      props: { posts },
+      props: { projects },
    };
 }
 
