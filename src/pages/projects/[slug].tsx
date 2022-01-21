@@ -68,11 +68,13 @@ export async function getStaticPaths() {
    const posts = getAllMdxFiles(['slug'] as never, 'src/data/projects');
 
    return {
-      paths: posts.map((post) => ({
-         params: {
-            slug: post.slug,
-         },
-      })),
+      paths: posts.map((post: any) => {
+         return {
+            params: {
+               slug: post.slug,
+            },
+         };
+      }),
       fallback: false,
    };
 }
