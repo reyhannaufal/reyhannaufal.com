@@ -24,14 +24,16 @@ function MyApp({ Component, pageProps }: AppProps) {
          setIsAnimating(false);
       };
 
-      router.events.on('routeChangeStart', handleStart);
-      router.events.on('routeChangeComplete', handleStop);
-      router.events.on('routeChangeError', handleStop);
+      const handleRouteChange = () => {
+         router.events.on('routeChangeStart', handleStart);
+         router.events.on('routeChangeComplete', handleStop);
+         router.events.on('routeChangeError', handleStop);
+      };
+
+      handleRouteChange();
 
       return () => {
-         router.events.off('routeChangeStart', handleStart);
-         router.events.off('routeChangeComplete', handleStop);
-         router.events.off('routeChangeError', handleStop);
+         handleRouteChange();
       };
    };
 
