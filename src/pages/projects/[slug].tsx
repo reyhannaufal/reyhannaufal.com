@@ -26,7 +26,7 @@ export default function ProjectBySlug({ post }: ProjectBySlugViewProps) {
             <img
                src={post.coverImage}
                alt={post.title}
-               className='w-full h-[400px] rounded-lg object-cover mb-10'
+               className='w-full h-[400px] rounded-lg object-cover md:h-full mb-10'
             />
             <div
                className={markdownStyles['markdown']}
