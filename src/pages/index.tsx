@@ -66,7 +66,7 @@ const Home = ({ projects }: HomeViewProps) => (
       </section>
 
       <section className='pt-10 pb-5 '>
-         <div className='mt-20 space-y-1 text-center lg:mt-10 lg:text-left'>
+         <div className='mt-20 space-y-1  lg:mt-10 text-left'>
             <h1 className='text-3xl font-bold lg:text-4xl text-primary'>
                Notable Projects
             </h1>

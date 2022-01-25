@@ -20,7 +20,7 @@ export default function CardView({ item, isProjectCard }: CardViewProps) {
                      width={450}
                      height={250}
                      blurDataURL={item.coverImage}
-                     className='rounded-lg w-full h-full md:h-[250px]  md:object-fill'
+                     className='rounded-lg md:h-[250px] object-cover md:object-fill'
                      src={item.coverImage as string}
                      alt={item.title}
                   />

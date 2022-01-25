@@ -10,8 +10,8 @@ export default function ComingSoon() {
    return (
       <Layout>
          <Seo title='Coming Soon | Reyhan Naufal Rahman' />
-         <div>
-            <h1 className='font-bold text-3xl md:text-4xl mt-10'>
+         <div className='h-[55vh] sm:h-full'>
+            <h1 className='font-bold text-2xl md:text-4xl mt-10'>
                Coming Soon
             </h1>
             <p className='text-sm md:text-base mb-3'>
