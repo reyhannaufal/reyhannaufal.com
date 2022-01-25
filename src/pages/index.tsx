@@ -75,7 +75,7 @@ const Home = ({ projects }: HomeViewProps) => (
             </p>
          </div>
 
-         <div className='flex flex-col sm:flex-row sm:space-x-5'>
+         <div className='flex flex-col md:flex-row sm:space-x-5 items-center'>
             {projects?.map((item: Project, id: number) => (
                <CardView item={item} key={id} isProjectCard />
             ))}

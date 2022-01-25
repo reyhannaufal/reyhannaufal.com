@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Post } from '@/src/constants/posts';
 
@@ -13,12 +14,18 @@ export default function CardView({ item, isProjectCard }: CardViewProps) {
       <>
          <Link href={slug} key={item.slug}>
             <div className='my-10 max-w-[500px]'>
-               <img
-                  className='rounded-lg w-full h-full md:h-[250px] mb-5  md:object-fill'
-                  src={item.coverImage}
-                  alt={item.title}
-               />
-               <h3 className='inline-block 2 px-4 py-2  mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm sm:mt-0 rounded-3xl'>
+               <div className='mb-2 md:mb-5'>
+                  <Image
+                     placeholder='blur'
+                     width={450}
+                     height={250}
+                     blurDataURL={item.coverImage}
+                     className='rounded-lg w-full h-full md:h-[250px]  md:object-fill'
+                     src={item.coverImage as string}
+                     alt={item.title}
+                  />
+               </div>
+               <h3 className='inline-block  px-4 py-2  mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm sm:mt-0 rounded-3xl'>
                   {item.type}
                </h3>
                <h1 className='font-bold text-xl sm:text-2xl mt-3'>

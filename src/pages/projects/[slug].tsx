@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
@@ -23,10 +24,14 @@ export default function ProjectBySlug({ post }: ProjectBySlugViewProps) {
                <p>-</p>
                <p>{post.date}</p>
             </div>
-            <img
-               src={post.coverImage}
+            <Image
+               className='rounded-2xl w-full h-[350px] object-cover sm:h-[500px]'
+               src={post.coverImage as string}
+               placeholder='blur'
+               blurDataURL={post.coverImage}
+               height={500}
+               width={955}
                alt={post.title}
-               className='w-full h-[400px] rounded-lg object-cover md:h-full mb-10'
             />
             <div
                className={markdownStyles['markdown']}

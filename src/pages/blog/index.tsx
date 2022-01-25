@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
@@ -24,9 +25,13 @@ export default function Blog({ posts }: BlogViewProps) {
                   <Link href='coming-soon' key={post.slug}>
                      {/* <Link href={`/blog/${post.slug}`} key={post.slug}> */}
                      <div className='my-10'>
-                        <img
+                        <Image
                            className='rounded-lg w-full h-[250px] object-cover sm:h-[500px] mb-5'
-                           src={post.coverImage}
+                           src={post.coverImage as string}
+                           placeholder='blur'
+                           blurDataURL={post.coverImage}
+                           height={500}
+                           width={955}
                            alt={post.title}
                         />
                         <h3 className='inline-block 2 px-4 py-2  mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm  rounded-3xl'>
