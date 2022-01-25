@@ -1,7 +1,7 @@
 ---
-title: 'PPDB Sumatera Selatan Project'
+title: 'PPDB Sumatera Selatan'
 excerpt: 'Project PPDB Sumatera Selatan is a web application that is used to manage the PPDB process in the province of Sumatera Selatan. The application is developed by the team of Institut Teknologi Sepuluh Nopember.'
-coverImage: 'https://images.unsplash.com/photo-1506287375451-bb850eba44d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+coverImage: '/projects/ppdb-sumsel/ppdb-image-1.png'
 date: December 1, 2021
 author:
    name: Reyhan Naufal Rahman
@@ -25,6 +25,24 @@ The tech stack that we used to develop the project is:
 You can access the project by clicking the text below.
 
 -  [Project PPDB Sumatera Selatan](https://ppdbsumsel.net/)
+
+## Dynamic form with maps
+
+Some libraries that we used to develop the forms are:
+
+-  **React Hook Form** for form management and form validation
+-  **React Leaflet** for maps, also using Google Maps API
+-  **React Dropzone** for drag-and-drop file upload
+-  **React Datepicker** for accessible date input
+-  **React Toastify** for giving toast about success and error
+
+![Maps Form](/projects/ppdb-sumsel/ppdb-image-3.png)
+
+## Accpeted and Rejected Form
+
+![Accepted Form](/projects/ppdb-sumsel/ppdb-image-2.jpeg)
+
+![Rejected Form](/projects/ppdb-sumsel/ppdb-image-4.jpeg)
 
 ## Leason Learned
 
