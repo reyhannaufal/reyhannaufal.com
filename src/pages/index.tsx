@@ -28,7 +28,7 @@ const Home = ({ projects }: HomeViewProps) => (
                   Reyhan Naufal Rahman
                </h1>
                <h2 className='text-lg font-bold md:text-2xl text-secondary'>
-                  Frontend Engineer
+                  Software Engineer
                </h2>
                <p className='text-base font-normal text-coolGray'>
                   Reyhan has experience of writting web apps. He has a knowledge
