@@ -1,12 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {
-   SiJavascript,
-   SiNextDotJs,
-   SiReact,
-   SiRedux,
-   SiTypescript,
-} from 'react-icons/si';
+import { SiJavascript, SiReact, SiRedux, SiTypescript } from 'react-icons/si';
 
 import CardView from '@/src/components/Card/CardView';
 import Layout from '@/src/components/Layout';
@@ -47,7 +41,6 @@ const Home = ({ projects }: HomeViewProps) => (
                <SiJavascript className={stackStyles.styles} />
                <SiTypescript className={stackStyles.styles} />
                <SiReact className={stackStyles.styles} />
-               <SiNextDotJs className={stackStyles.styles} />
                <SiRedux className={stackStyles.styles} />
             </div>
          </div>
