@@ -1,6 +1,9 @@
-import create from 'zustand';
+import create, { SetState } from 'zustand';
 
-export const useProgressStore = create((set) => ({
-   isAnimating: false,
-   setIsAnimating: (isAnimating: boolean) => set(() => ({ isAnimating })),
-}));
+export const useProgressStore = create((set: SetState<any>) => {
+   return {
+      isAnimating: false,
+      setIsAnimating: (isAnimating: boolean) => set(() => ({ isAnimating })),
+   };
+});
+``;
