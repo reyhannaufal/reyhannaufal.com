@@ -9,8 +9,8 @@ export function getMdxFilesSlug(source: string) {
 }
 
 export function getMdxFileBySlug(slug: string, fields = [], source: string) {
-   const realSlug = slug.replace(/\.md$/, '');
-   const fullPath = join(folderDirectory(source), `${realSlug}.md`);
+   const realSlug = slug.replace(/\.mdx$/, '');
+   const fullPath = join(folderDirectory(source), `${realSlug}.mdx`);
    const fileContents = fs.readFileSync(fullPath, 'utf8');
    const { data, content } = matter(fileContents);
 
