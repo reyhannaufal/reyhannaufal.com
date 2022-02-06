@@ -13,21 +13,29 @@ type: 'Frontend'
 
 ## Project Description
 
-Nells is a web application that helps people to be aware of armpit diseases, by providing information about the diseases and their symptoms. The application is built with ReactJS, NextJS, and TailwindCSS. This project's my first time to be worked with UI/UX designer, he is a friend of mine called Rifqiandi Cesario Putra. I'm very proud to be able to work with him.
+Nells is a web application that helps people to be aware of armpit diseases, by providing information about the diseases and their symptoms. The application is built with ReactJS, NextJS, and TailwindCSS.
 
-You can access the source code of this project [here](github.com/reyhanrahman/nells) and feel free to check out the website [here](https://nells.netlify.app/). If you have any questions, feel free to contact me at [linkedin](https://linkedin.com/in/reyhan-naufal).
+This project's my first time to be worked with UI/UX designer, [Rifqiandi Cesario Putra](https://dribbble.com/Rifqiandi). I'm very proud to be able to work with him 🤞.
+
+You can access the source code of this project [here](GitHub.com/reyhanrahman/nells) and feel free to check out the website [here](https://nellsofficial.com/).
+
+## Mockup
+
+![Mockup](/projects/nells/nells-mockup.png)
 
 ## Product Detail
 
-I used **React Slick** for developing the carousel on the product detail page
-
 ![Product Detail](/projects/nells/nells-image-2.png)
+
+I used **React Slick** for developing the carousel on the product detail page. This feature's kinda tricky to implement because you know it's a carousel, but it's not a carousel lol 😄.
 
 ## Leason Learned
 
-Something that I learned from this project is, that it's important to have good communication with the designer because every pixel matters to him. Overall working with Rifqi is such a great experience.
+Something that I learned from this project, it's important to have good communication with the designer.
+
+Poor communication creates friction and misunderstanding between the designer and developer this leads to rework, stress, and bad relationships inside the team ⛔
 
 Using CMS will be great for this project because it will be easier to manage the content. But I'm not implementing it because:
 
-1. I don't have the time to do so
-2. It's just one time use-only application.
+1. It's not a scalable project 🔴
+2. I don't have the time to implement the feature. It will take time to do some research about what kind of CMS is suitable for this project and how to implement CMS itself 🤕.
