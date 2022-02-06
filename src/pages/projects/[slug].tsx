@@ -25,7 +25,7 @@ export default function ProjectBySlug({ post }: ProjectBySlugViewProps) {
                <p>{post.date}</p>
             </div>
             <Image
-               className='rounded-2xl w-full h-[350px] object-cover sm:h-[500px]'
+               className='w-full h-[350px] object-cover sm:h-[500px]'
                src={post.coverImage as string}
                placeholder='blur'
                blurDataURL={post.coverImage}
