@@ -7,9 +7,9 @@ import * as Sentry from '@sentry/nextjs';
 const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 
 Sentry.init({
-   dsn: SENTRY_DSN,
+   dsn: 'https://d61105cf07b64555b298a68622c364a4@o1010523.ingest.sentry.io/6173940',
    // Adjust this value in production, or use tracesSampler for greater control
-   tracesSampleRate: 1.0,
+   tracesSampleRate: 0.2,
    // ...
    // Note: if you want to override the automatic release value, do not set a
    // `release` value here - use the environment variable `SENTRY_RELEASE`, so
