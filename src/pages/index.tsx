@@ -20,6 +20,14 @@ interface HomeViewProps {
 const Home = ({ projects }: HomeViewProps) => (
    <Layout>
       <Seo />
+      <button
+         type='button'
+         onClick={() => {
+            throw new Error('Sentry Frontend Error');
+         }}
+      >
+         Throw error
+      </button>
       <section className='flex flex-col-reverse items-center py-4 sm:py-14 lg:flex-row'>
          <div className='max-w-lg text-left'>
             <div className='space-y-1 md:space-y-2'>
