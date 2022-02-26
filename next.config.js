@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
-const { withSentryConfig } = require('@sentry/nextjs');
-
-module.exports = withSentryConfig({
+module.exports = {
    i18n: {
       locales: ['id'],
       defaultLocale: 'id',
@@ -12,4 +10,4 @@ module.exports = withSentryConfig({
       formats: ['image/avif', 'image/webp'],
       domains: ['reyhannaufal.com', 'images.unsplash.com'],
    },
-});
+};
