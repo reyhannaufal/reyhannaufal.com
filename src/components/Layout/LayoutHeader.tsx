@@ -24,7 +24,7 @@ export default function Header() {
    return (
       <header className='flex items-center justify-between py-5'>
          <div className='h-7 w-7 md:h-auto md:w-auto'>
-            <Link href='/'>
+            <Link href='/' passHref>
                <Image
                   src='/reyhan-logo.svg'
                   alt='logo'
