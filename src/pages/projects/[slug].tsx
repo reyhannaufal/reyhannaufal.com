@@ -4,24 +4,24 @@ import matter from 'gray-matter';
 import React from 'react';
 import Image from 'next/image';
 import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote } from 'next-mdx-remote';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 
 export interface ProjectBySlugViewProps {
-   source: any;
-   frontMatter: any;
+   source: MDXRemoteSerializeResult<Record<string, unknown>>;
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   frontMatter: { [k: string]: any };
 }
 
 export default function ProjectBySlug({
    source,
    frontMatter,
 }: ProjectBySlugViewProps) {
-   console.log(source);
    return (
       <>
-         <Seo title={`Projects | ${frontMatter.title}`} />
+         <Seo title={`Projects | ${frontMatter?.title}`} />
          <Layout>
             <h1 className='font-bold text-xl sm:text-3xl mt-7'>
                {frontMatter?.title}
@@ -66,6 +66,5 @@ export async function getStaticPaths() {
    const paths = filenames.map((name) => ({
       params: { slug: name.replace('.mdx', '') },
    }));
-   console.log('paths', paths);
    return { paths, fallback: true };
 }
