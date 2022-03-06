@@ -26,10 +26,10 @@ const Home = ({ projects }: HomeViewProps) => (
          <div className='max-w-lg text-left'>
             <div className='space-y-1 md:space-y-2'>
                <p className='mt-2 text-sm font-bold lg:mt-0'>Hey, I&apos;m</p>
-               <h1 className='max-w-[300px] md:max-w-[500px] lg:max-w-sm  text-left lg:mx-0 text-2xl md:text-3xl font-bold  lg:text-4xl text-primary'>
+               <h1 className='max-w-[300px] text-left text-2xl  font-bold text-primary md:max-w-[500px] md:text-3xl lg:mx-0  lg:max-w-sm lg:text-4xl'>
                   Reyhan Naufal Rahman
                </h1>
-               <h2 className='text-lg font-bold md:text-2xl text-secondary'>
+               <h2 className='text-lg font-bold text-secondary md:text-2xl'>
                   Software Engineer
                </h2>
                <p className='text-base font-normal text-coolGray'>
@@ -39,7 +39,7 @@ const Home = ({ projects }: HomeViewProps) => (
                   Redux.{' '}
                </p>
             </div>
-            <div className='flex justify-start mx-auto mt-8 space-x-6'>
+            <div className='mx-auto mt-8 flex justify-start space-x-6'>
                <SiJavascript className={stackStyles.styles} />
                <SiTypescript className={stackStyles.styles} />
                <SiReact className={stackStyles.styles} />
@@ -47,7 +47,7 @@ const Home = ({ projects }: HomeViewProps) => (
             </div>
          </div>
          <div className='mx-auto mt-20 lg:mt-0'>
-            <div className='w-52 h-52 md:h-72 md:w-72 lg:h-auto lg:w-auto'>
+            <div className='h-52 w-52 md:h-72 md:w-72 lg:h-auto lg:w-auto'>
                <Image
                   src='/laptop-illustrations.svg'
                   placeholder='blur'
@@ -61,8 +61,8 @@ const Home = ({ projects }: HomeViewProps) => (
       </section>
 
       <section className='pt-10 pb-5 '>
-         <div className='mt-20 space-y-1  lg:mt-10 text-left'>
-            <h1 className='text-3xl font-bold lg:text-4xl text-primary'>
+         <div className='mt-20 space-y-1  text-left lg:mt-10'>
+            <h1 className='text-3xl font-bold text-primary lg:text-4xl'>
                Notable Projects
             </h1>
             <p className='text-base font-normal'>
@@ -70,7 +70,7 @@ const Home = ({ projects }: HomeViewProps) => (
             </p>
          </div>
 
-         <div className='flex flex-col md:flex-row sm:space-x-5 items-center'>
+         <div className='flex flex-col items-center sm:space-x-5 md:flex-row'>
             {projects?.map((item: Project, id: number) => (
                <CardView item={item} key={id} isProjectCard />
             ))}

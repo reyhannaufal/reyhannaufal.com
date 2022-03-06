@@ -20,7 +20,7 @@ export default function Projects({ projects }: ProjectsViewProps) {
    return (
       <Layout>
          <Seo title={meta.title} />
-         <div className='pt-10 pb-15'>
+         <div className='pb-15 pt-10'>
             <h1 className='text-3xl font-bold'>Projects</h1>
             <p className='text-base font-normal'>
                Some cool projects that I have worked on!

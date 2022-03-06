@@ -23,16 +23,16 @@ export default function ProjectBySlug({
       <>
          <Seo title={`Projects | ${frontMatter?.title}`} />
          <Layout>
-            <h1 className='font-bold text-xl sm:text-3xl mt-7'>
+            <h1 className='mt-7 text-xl font-bold sm:text-3xl'>
                {frontMatter?.title}
             </h1>
-            <div className='flex text-xs sm:text-base mt-2 mb-4 space-x-2 text-gray-500'>
+            <div className='mt-2 mb-4 flex space-x-2 text-xs text-gray-500 sm:text-base'>
                <p>{frontMatter?.author?.name}</p>
                <p>-</p>
                <p>{frontMatter?.date}</p>
             </div>
             <Image
-               className='w-full h-[350px] object-cover sm:h-[500px]'
+               className='h-[350px] w-full object-cover sm:h-[500px]'
                src={frontMatter?.coverImage as string}
                placeholder='blur'
                blurDataURL={frontMatter?.coverImage}

@@ -17,11 +17,11 @@ const footerList = [
 
 export default function Footer() {
    return (
-      <footer className='flex-col py-20 mx-auto text-center sm:pt-36 text-primary'>
-         <h2 className='max-w-3xl py-4 mx-auto text-sm sm:text-lg font-bold border-t-2 rounded-sm '>
+      <footer className='mx-auto flex-col py-20 text-center text-primary sm:pt-36'>
+         <h2 className='mx-auto max-w-3xl rounded-sm border-t-2 py-4 text-sm font-bold sm:text-lg '>
             Contact Me
          </h2>
-         <div className='flex flex-row justify-center pb-3 space-x-2'>
+         <div className='flex flex-row justify-center space-x-2 pb-3'>
             {footerList.map((item) => (
                <a
                   key={item.id}
