@@ -54,7 +54,7 @@ export async function getStaticPaths() {
    const paths = filenames.map((name) => ({
       params: { slug: name.replace('.mdx', '') },
    }));
-   return { paths, fallback: true };
+   return { paths, fallback: false };
 }
 export async function getStaticProps({ params }: { params: { slug: string } }) {
    const projectsPath = path.join(
