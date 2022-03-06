@@ -48,6 +48,14 @@ export default function ProjectBySlug({
    );
 }
 
+export async function getStaticPaths() {
+   const projectsDirectory = path.join(process.cwd(), 'src/data/projects');
+   const filenames = fs.readdirSync(projectsDirectory);
+   const paths = filenames.map((name) => ({
+      params: { slug: name.replace('.mdx', '') },
+   }));
+   return { paths, fallback: true };
+}
 export async function getStaticProps({ params }: { params: { slug: string } }) {
    const projectsPath = path.join(
       process.cwd(),
@@ -58,13 +66,4 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
    const { content, data } = matter(projectsSource);
    const mdxSource = await serialize(content);
    return { props: { source: mdxSource, frontMatter: data } };
-}
-
-export async function getStaticPaths() {
-   const projectsDirectory = path.join(process.cwd(), 'src/data/projects');
-   const filenames = fs.readdirSync(projectsDirectory);
-   const paths = filenames.map((name) => ({
-      params: { slug: name.replace('.mdx', '') },
-   }));
-   return { paths, fallback: true };
 }
