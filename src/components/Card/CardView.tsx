@@ -9,6 +9,7 @@ type CardViewProps = {
 };
 
 export default function CardView({ item, isProjectCard }: CardViewProps) {
+   console.log(item);
    const slug = isProjectCard ? `projects/${item.slug}` : `coming-soon`;
    return (
       <>
