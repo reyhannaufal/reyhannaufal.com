@@ -41,7 +41,7 @@ export default function BlogBySlug({
                width={955}
                alt={frontMatter?.title}
             />
-            <section className='prose'>
+            <section className='prose pt-10 prose-h2:text-lg lg:prose-h2:text-2xl'>
                <MDXRemote {...source} />
             </section>
          </Layout>
@@ -50,21 +50,21 @@ export default function BlogBySlug({
 }
 
 export function getStaticPaths() {
-   const projectsDirectory = path.join(process.cwd(), 'src/data/projects');
-   const filenames = fs.readdirSync(projectsDirectory);
+   const blogsDirectory = path.join(process.cwd(), 'src/data/posts');
+   const filenames = fs.readdirSync(blogsDirectory);
    const paths = filenames.map((name) => ({
       params: { slug: name.replace('.mdx', '') },
    }));
    return { paths, fallback: false };
 }
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-   const projectsPath = path.join(
+   const blogsPath = path.join(
       process.cwd(),
-      'src/data/projects',
+      'src/data/posts',
       `${params.slug}.mdx`
    );
-   const projectsSource = fs.readFileSync(projectsPath, 'utf8');
-   const { content, data } = matter(projectsSource);
+   const blogSource = fs.readFileSync(blogsPath, 'utf8');
+   const { content, data } = matter(blogSource);
    const mdxSource = await serialize(content);
    return { props: { source: mdxSource, frontMatter: data } };
 }
