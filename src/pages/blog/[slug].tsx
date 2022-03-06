@@ -1,86 +1,70 @@
 import React from 'react';
 import Image from 'next/image';
+import path from 'path';
+import fs from 'fs';
+import matter from 'gray-matter';
 
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
-import markdownToHtml from '@/src/utils/markDownToHtml';
 import { serialize } from 'next-mdx-remote/serialize';
-import { getAllMdxFiles, getMdxFileBySlug } from '@/src/utils/mdx';
-import markdownStyles from './markdown-content.module.css';
-import { Post } from '@/src/constants/posts';
+
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 interface BlogBySlugViewProps {
-   post: Post;
+   source: MDXRemoteSerializeResult<Record<string, unknown>>;
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   frontMatter: { [k: string]: any };
 }
 
-export default function BlogBySlug({ post }: BlogBySlugViewProps) {
+export default function BlogBySlug({
+   source,
+   frontMatter,
+}: BlogBySlugViewProps) {
    return (
       <>
-         <Seo title={`Blog | ${post.title}`} />
+         <Seo title={`Blog | ${frontMatter?.title}`} />
          <Layout>
-            <h1 className='font-bold text-xl sm:text-3xl mt-7'>{post.title}</h1>
+            <h1 className='font-bold text-xl sm:text-3xl mt-7'>
+               {frontMatter?.title}
+            </h1>
             <div className='flex text-xs sm:text-base mt-2 mb-4 space-x-2 text-gray-500'>
-               <p>{post?.author?.name}</p>
+               <p>{frontMatter?.author?.name}</p>
                <p>-</p>
-               <p>{post.date}</p>
+               <p>{frontMatter.date}</p>
             </div>
             <Image
                className='rounded-lg w-full h-[250px] object-cover sm:h-[500px]'
-               src={post.coverImage as string}
+               src={frontMatter.coverImage as string}
                placeholder='blur'
-               blurDataURL={post.coverImage}
+               blurDataURL={frontMatter.coverImage}
                height={500}
                width={955}
-               alt={post.title}
+               alt={frontMatter.title}
             />
-            <div
-               className={markdownStyles['markdown']}
-               dangerouslySetInnerHTML={{ __html: post.content ?? '' }}
-            />
+            <section className='prose'>
+               <MDXRemote {...source} />
+            </section>
          </Layout>
       </>
    );
 }
 
-export async function getStaticProps({ params }: { params: { slug: string } }) {
-   const postFields = [
-      'slug',
-      'title',
-      'date',
-      'author',
-      'content',
-      'ogImage',
-      'coverImage',
-   ];
-   const post: Post = getMdxFileBySlug(
-      params.slug,
-      postFields as [],
-      'src/data/posts'
-   );
-   // const content = await markdownToHtml(post.content || '');
-   const content = await serialize(post.content || '');
-
-   return {
-      props: {
-         post: {
-            ...post,
-            content,
-         },
-      },
-   };
-}
-
 export async function getStaticPaths() {
-   const posts = getAllMdxFiles(['slug'] as never, 'src/data/posts');
-
-   return {
-      paths: posts.map((post: Post) => {
-         return {
-            params: {
-               slug: post.slug,
-            },
-         };
-      }),
-      fallback: false,
-   };
+   const projectsDirectory = path.join(process.cwd(), 'src/data/projects');
+   const filenames = fs.readdirSync(projectsDirectory);
+   const paths = filenames.map((name) => ({
+      params: { slug: name.replace('.mdx', '') },
+   }));
+   return { paths, fallback: true };
+}
+export async function getStaticProps({ params }: { params: { slug: string } }) {
+   const projectsPath = path.join(
+      process.cwd(),
+      'src/data/projects',
+      `${params.slug}.mdx`
+   );
+   const projectsSource = fs.readFileSync(projectsPath, 'utf8');
+   const { content, data } = matter(projectsSource);
+   const mdxSource = await serialize(content);
+   return { props: { source: mdxSource, frontMatter: data } };
 }

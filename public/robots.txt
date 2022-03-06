@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.reyhannaufal.com
+
+# Sitemaps
+Sitemap: https://www.reyhannaufal.com/sitemap.xml
