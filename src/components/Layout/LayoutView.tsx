@@ -9,12 +9,12 @@ type LayoutInterface = {
 export default function Layout({ children }: LayoutInterface) {
    return (
       <div
-      className='bg-fixed bg-cover bg-center bg-no-repeat'
+         className='bg-cover bg-fixed bg-center bg-no-repeat'
          style={{
             backgroundImage: 'url(/background-layout.png)',
          }}
       >
-         <div className='max-w-md px-10 mx-auto sm:max-w-5xl overflow-hidden z-10'>
+         <div className='z-10 mx-auto max-w-md overflow-hidden px-10 sm:max-w-5xl'>
             <Header />
             {children}
             <Footer />

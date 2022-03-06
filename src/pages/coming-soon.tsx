@@ -11,22 +11,22 @@ export default function ComingSoon() {
       <Layout>
          <Seo title='Coming Soon | Reyhan Naufal Rahman' />
          <div className='h-[55vh] sm:h-full'>
-            <h1 className='font-bold text-2xl md:text-4xl mt-10'>
+            <h1 className='mt-10 text-2xl font-bold md:text-4xl'>
                Coming Soon
             </h1>
-            <p className='text-sm md:text-base mb-3'>
+            <p className='mb-3 text-sm md:text-base'>
                Something awesome is coming!
             </p>
             <Image
                placeholder='blur'
                height={500}
                width={955}
-               className='rounded-lg w-full h-[250px] object-fill sm:h-[500px] mb-5'
+               className='mb-5 h-[250px] w-full rounded-lg object-fill sm:h-[500px]'
                blurDataURL={image}
                src={image}
             />
             <Link href='/'>
-               <button className='py-2.5 text-xs md:text-base bg-primary rounded-xl px-4 mt-2 text-white hover:border-2 transition-all'>
+               <button className='mt-2 rounded-xl bg-primary py-2.5 px-4 text-xs text-white transition-all hover:border-2 md:text-base'>
                   Back To Home
                </button>
             </Link>

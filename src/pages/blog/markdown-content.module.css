@@ -11,11 +11,11 @@
 }
 
 .markdown h2 {
-   @apply text-2xl mt-12 mb-4 font-bold;
+   @apply mt-12 mb-4 text-2xl font-bold;
 }
 
 .markdown h3 {
-   @apply text-xl mt-8 mb-4;
+   @apply mt-8 mb-4 text-xl;
 }
 
 .markdown ul {

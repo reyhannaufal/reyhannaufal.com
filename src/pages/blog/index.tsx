@@ -30,7 +30,7 @@ export default function Blog({ posts }: BlogViewProps) {
                      <div className='my-10'>
                         <div className='mb-2 sm:mb-5'>
                            <Image
-                              className='rounded-lg w-full h-[250px] object-cover sm:h-[500px] mb-5'
+                              className='mb-5 h-[250px] w-full rounded-lg object-cover sm:h-[500px]'
                               src={post.coverImage as string}
                               placeholder='blur'
                               blurDataURL={post.coverImage}
@@ -39,17 +39,17 @@ export default function Blog({ posts }: BlogViewProps) {
                               alt={post.title}
                            />
                         </div>
-                        <h3 className='inline-block 2 px-4 py-2  mb-2 text-xs font-medium text-indigo-800 bg-indigo-300 md:text-sm  rounded-3xl'>
+                        <h3 className='2 mb-2 inline-block rounded-3xl  bg-indigo-300 px-4 py-2 text-xs font-medium text-indigo-800  md:text-sm'>
                            {post.type}
                         </h3>
-                        <h1 className='font-bold text-xl sm:text-4xl mt-3'>
+                        <h1 className='mt-3 text-xl font-bold sm:text-4xl'>
                            {post.title}
                         </h1>
                         <p className='mt-4 text-gray-500'>{post.excerpt}</p>
                         <p className='mt-3 text-[13px] text-gray-500'>
                            {post.date}
                         </p>
-                        <p className='mt-6 underline text-sm sm:text-base cursor-pointer text-gray-700'>
+                        <p className='mt-6 cursor-pointer text-sm text-gray-700 underline sm:text-base'>
                            Read More
                         </p>
                      </div>
@@ -57,7 +57,7 @@ export default function Blog({ posts }: BlogViewProps) {
                )}
             </div>
          ))}
-         <h2 className='font-bold text-3xl mt-20'>All Articles</h2>
+         <h2 className='mt-20 text-3xl font-bold'>All Articles</h2>
          <div className='flex flex-col sm:flex-row sm:space-x-5'>
             {posts.map((post: Post) => (
                <div key={post.slug}>

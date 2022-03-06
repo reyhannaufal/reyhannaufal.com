@@ -23,7 +23,7 @@ export default function Header() {
 
    return (
       <header className='flex items-center justify-between py-5'>
-         <div className='w-7 md:h-auto md:w-auto h-7'>
+         <div className='h-7 w-7 md:h-auto md:w-auto'>
             <Link href='/'>
                <Image
                   src='/reyhan-logo.svg'
@@ -38,9 +38,9 @@ export default function Header() {
                <div
                   key={item.id}
                   className={classNames(
-                     'flex justify-center px-3 sm:px-3 py-2 rounded-md hover:text-gray-300',
+                     'flex justify-center rounded-md px-3 py-2 hover:text-gray-300 sm:px-3',
                      isActiveLink(item.href)
-                        ? 'text-gray-100 bg-primary hover:text-gray-100'
+                        ? 'bg-primary text-gray-100 hover:text-gray-100'
                         : ''
                   )}
                >

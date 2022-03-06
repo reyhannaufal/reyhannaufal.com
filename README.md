@@ -1,8 +1,8 @@
 # reyhannaufal.com 🙌
+
 Personal website built using NextJS, Typecript, and TailwindCSS.
 
 ![Depfu](https://img.shields.io/depfu/dependencies/github/reyhannaufal/reyhannaufal.com?style=for-the-badge)
-
 
 ## Run Locally
 
@@ -29,4 +29,3 @@ Start the server
 ```bash
   yarn dev
 ```
-
