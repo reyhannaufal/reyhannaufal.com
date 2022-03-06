@@ -1,14 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import path from 'path';
-import fs from 'fs';
-import matter from 'gray-matter';
 
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 import CardView from '@/src/components/Card/CardView';
 import { Post } from '@/src/constants/posts';
+import { getAllLocalDataFiles } from '@/src/utils/localData';
 
 const meta = {
    title: 'Blog | Reyhan Naufal Rahman',
@@ -70,24 +68,7 @@ export default function Blog({ posts }: BlogViewProps) {
 }
 
 export async function getStaticProps() {
-   const postDirectory = path.join(process.cwd(), 'src/data/posts');
-   const filenames = fs.readdirSync(postDirectory, 'utf8');
-   const paths = filenames.map((name) => ({
-      params: { slug: name.replace('.mdx', '') },
-   }));
-   const posts = paths.map((p) => {
-      const projectFile = fs.readFileSync(
-         `${postDirectory}/${p.params.slug}.mdx`,
-         'utf-8'
-      );
-
-      const { data } = matter(projectFile);
-
-      return {
-         ...data,
-         slug: p?.params?.slug,
-      };
-   });
+   const posts = getAllLocalDataFiles('posts');
    return {
       props: { posts },
    };
