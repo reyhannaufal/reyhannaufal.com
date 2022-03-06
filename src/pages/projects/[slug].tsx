@@ -40,7 +40,7 @@ export default function ProjectBySlug({
                width={955}
                alt={frontMatter?.title}
             />
-            <section className='prose'>
+            <section className='prose pt-10 prose-h2:text-lg lg:prose-h2:text-2xl'>
                <MDXRemote {...source} />
             </section>
          </Layout>
