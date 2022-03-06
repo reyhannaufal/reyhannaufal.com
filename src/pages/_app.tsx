@@ -11,9 +11,12 @@ import { Progress } from '@/src/components/Progress';
 function MyApp({ Component, pageProps }: AppProps) {
    const router = useRouter();
 
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
    const setIsAnimating = useProgressStore<any>(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (state: any) => state?.setIsAnimating
    );
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
    const isAnimating = useProgressStore((state: any) => state?.isAnimating);
 
    const handleLoadingScreen = () => {
@@ -39,6 +42,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
    useEffect(() => {
       handleLoadingScreen();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [router]);
 
    return (

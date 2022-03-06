@@ -12,7 +12,7 @@ export default function CardView({ item, isProjectCard }: CardViewProps) {
    const slug = isProjectCard ? `projects/${item.slug}` : `coming-soon`;
    return (
       <>
-         <Link href={slug} key={item.slug}>
+         <Link href={slug} key={item.slug} passHref>
             <div className='my-10 max-w-[500px]'>
                <div className='mb-2 md:mb-5'>
                   <Image

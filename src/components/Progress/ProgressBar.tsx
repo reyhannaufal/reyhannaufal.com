@@ -1,5 +1,6 @@
 import React from 'react';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Bar = ({ animationDuration, progress }: any) => (
    <div
       className='fixed top-0 left-0 z-50 h-[4px] w-full rounded-sm bg-primary'

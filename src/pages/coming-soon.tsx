@@ -24,8 +24,9 @@ export default function ComingSoon() {
                className='mb-5 h-[250px] w-full rounded-lg object-fill sm:h-[500px]'
                blurDataURL={image}
                src={image}
+               alt='Coming Soon'
             />
-            <Link href='/'>
+            <Link href='/' passHref>
                <button className='mt-2 rounded-xl bg-primary py-2.5 px-4 text-xs text-white transition-all hover:border-2 md:text-base'>
                   Back To Home
                </button>
