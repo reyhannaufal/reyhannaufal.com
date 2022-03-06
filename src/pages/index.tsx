@@ -1,11 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
+import path from 'path';
+import fs from 'fs';
+import matter from 'gray-matter';
 import { SiJavascript, SiReact, SiRedux, SiTypescript } from 'react-icons/si';
 
 import CardView from '@/src/components/Card/CardView';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
-import { getAllMdxFiles } from '../utils/mdx';
 import { Project } from '../constants/projects';
 
 const stackStyles = {
@@ -78,19 +80,24 @@ const Home = ({ projects }: HomeViewProps) => (
 );
 
 export async function getStaticProps() {
-   const projects = getAllMdxFiles(
-      [
-         'title',
-         'date',
-         'slug',
-         'author',
-         'coverImage',
-         'excerpt',
-         'type',
-      ] as never,
-      'src/data/projects'
-   );
+   const projectsDirectory = path.join(process.cwd(), 'src/data/projects');
+   const filenames = fs.readdirSync(projectsDirectory, 'utf8');
+   const paths = filenames.map((name) => ({
+      params: { slug: name.replace('.mdx', '') },
+   }));
+   const projects = paths.map((p) => {
+      const projectFile = fs.readFileSync(
+         `${projectsDirectory}/${p.params.slug}.mdx`,
+         'utf-8'
+      );
 
+      const { data } = matter(projectFile);
+
+      return {
+         ...data,
+         slug: p?.params?.slug,
+      };
+   });
    return {
       props: { projects },
    };
