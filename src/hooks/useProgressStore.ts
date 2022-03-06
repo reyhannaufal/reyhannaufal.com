@@ -1,10 +1,13 @@
-import create, { SetState } from 'zustand';
+import create from 'zustand';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const useProgressStore = create((set: SetState<any>) => {
+export interface ProgressStore {
+   isAnimating: boolean;
+   setIsAnimating: (isAnimating: boolean) => void;
+}
+
+export const useProgressStore = create<ProgressStore>((set) => {
    return {
       isAnimating: false,
       setIsAnimating: (isAnimating: boolean) => set(() => ({ isAnimating })),
    };
 });
-``;
