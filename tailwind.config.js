@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-undef
 const colors = require('tailwindcss/colors');
 
+// eslint-disable-next-line no-undef
 module.exports = {
    purge: [
       './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -11,7 +13,6 @@ module.exports = {
    theme: {
       extend: {
          colors: {
-            gray: colors.coolGray,
             blue: colors.sky,
             red: colors.rose,
             pink: colors.fuchsia,
@@ -24,8 +25,6 @@ module.exports = {
    variants: {
       extend: {},
    },
-   plugins: [
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/aspect-ratio'),
-   ],
+   // eslint-disable-next-line no-undef
+   plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 };
