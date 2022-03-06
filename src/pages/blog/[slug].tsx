@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
 import markdownToHtml from '@/src/utils/markDownToHtml';
+import { serialize } from 'next-mdx-remote/serialize';
 import { getAllMdxFiles, getMdxFileBySlug } from '@/src/utils/mdx';
 import markdownStyles from './markdown-content.module.css';
 import { Post } from '@/src/constants/posts';
@@ -56,7 +57,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       postFields as [],
       'src/data/posts'
    );
-   const content = await markdownToHtml(post.content || '');
+   // const content = await markdownToHtml(post.content || '');
+   const content = await serialize(post.content || '');
 
    return {
       props: {
