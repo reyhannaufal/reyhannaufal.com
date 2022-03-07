@@ -23,8 +23,7 @@ export default function Blog({ posts }: BlogViewProps) {
          {posts.map((post: Post) => (
             <div key={post.slug}>
                {post.new && (
-                  <Link href='coming-soon' key={post.slug} passHref>
-                     {/* <Link href={`/blog/${post.slug}`} key={post.slug}> */}
+                  <Link href={`/blog/${post.slug}`} key={post.slug} passHref>
                      <div className='my-10'>
                         <div className='mb-2 sm:mb-5'>
                            <Image

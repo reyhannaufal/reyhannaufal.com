@@ -37,4 +37,16 @@ describe('Index Page', () => {
 
       expect(container.firstChild?.hasChildNodes()).toBeTruthy();
    });
+
+   it('renders correct home heading', async () => {
+      const { findAllByTitle } = render(<HomePage projects={mockProjects} />);
+
+      expect(findAllByTitle('Reyhan Naufal Rahman')).toBeTruthy();
+   });
+
+   it('renders correct project list', async () => {
+      const { findAllByText } = render(<HomePage projects={mockProjects} />);
+
+      expect(findAllByText(mockProjects[0].title)).toBeTruthy();
+   });
 });
