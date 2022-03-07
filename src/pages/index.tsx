@@ -5,7 +5,7 @@ import { SiJavascript, SiReact, SiRedux, SiTypescript } from 'react-icons/si';
 import CardView from '@/src/components/Card/CardView';
 import Layout from '@/src/components/Layout';
 import Seo from '@/src/components/Layout/LayoutSeo';
-import { Project } from '../constants/projects';
+import { OptionalProject } from '../constants/projects';
 import { getAllLocalDataFiles } from '../utils/localData';
 
 const stackStyles = {
@@ -14,7 +14,7 @@ const stackStyles = {
 };
 
 interface HomeViewProps {
-   projects: Project[];
+   projects: OptionalProject[];
 }
 
 const Home = ({ projects }: HomeViewProps) => (
@@ -69,7 +69,7 @@ const Home = ({ projects }: HomeViewProps) => (
          </div>
 
          <div className='flex flex-col items-center sm:space-x-5 md:flex-row'>
-            {projects?.map((item: Project, id: number) => (
+            {projects?.map((item: OptionalProject, id: number) => (
                <CardView item={item} key={id} isProjectCard />
             ))}
          </div>

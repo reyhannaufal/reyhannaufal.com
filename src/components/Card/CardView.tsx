@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Post } from '@/src/constants/posts';
+import { OptionalPost } from '@/src/constants/posts';
 
 type CardViewProps = {
-   item: Post;
+   item: OptionalPost;
    isProjectCard?: boolean;
 };
 
