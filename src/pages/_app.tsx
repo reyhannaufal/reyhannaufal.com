@@ -3,10 +3,10 @@ import type { AppProps } from 'next/app';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import { ProgressStore, useProgressStore } from '@/src/hooks/useProgressStore';
+import { ProgressStore, useProgressStore } from '@/hooks/useProgressStore';
 
-import '@/src/styles/globals.css';
-import { Progress } from '@/src/components/Progress';
+import '@/styles/globals.css';
+import { Progress } from '@/components/Progress';
 
 function MyApp({ Component, pageProps }: AppProps) {
    const router = useRouter();

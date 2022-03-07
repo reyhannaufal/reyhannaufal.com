@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { classNames } from '@/src/utils/classNames';
+import { classNames } from '@/utils/classNames';
 
 const headerList = [
    { id: '1', title: 'Home', href: '/' },
@@ -16,7 +16,7 @@ export default function Header() {
    const { pathname } = router;
    const isActiveLink = (href: string) => {
       if (href === '/projects' || href === '/blog') {
-         return router.pathname.startsWith(href) ? 'active' : '';
+         return router.pathname?.startsWith(href) ? 'active' : '';
       }
       return pathname === href ? 'active' : '';
    };
@@ -36,7 +36,7 @@ export default function Header() {
          <div className='flex items-center space-x-4 text-xs font-medium text-gray-400 sm:text-sm'>
             {headerList.map((item) => (
                <div
-                  key={item.id}
+                  key={item.title}
                   className={classNames(
                      'flex justify-center rounded-md px-3 py-2 hover:text-gray-300 sm:px-3',
                      isActiveLink(item.href)

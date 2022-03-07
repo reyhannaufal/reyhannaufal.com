@@ -2,11 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import Layout from '@/src/components/Layout';
-import Seo from '@/src/components/Layout/LayoutSeo';
-import CardView from '@/src/components/Card/CardView';
-import { Post } from '@/src/constants/posts';
-import { getAllLocalDataFiles } from '@/src/utils/localData';
+import Layout from '@/components/Layout';
+import Seo from '@/components/Layout/LayoutSeo';
+import CardView from '@/components/Card/CardView';
+import { Post } from '@/constants/posts';
+import { getAllLocalDataFiles } from '@/utils/localData';
 
 const meta = {
    title: 'Blog | Reyhan Naufal Rahman',

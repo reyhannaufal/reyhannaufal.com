@@ -1,10 +1,10 @@
 import React from 'react';
 
-import CardView from '@/src/components/Card/CardView';
-import Layout from '@/src/components/Layout';
-import Seo from '@/src/components/Layout/LayoutSeo';
-import { Project } from '@/src/constants/projects';
-import { getAllLocalDataFiles } from '@/src/utils/localData';
+import CardView from '@/components/Card/CardView';
+import Layout from '@/components/Layout';
+import Seo from '@/components/Layout/LayoutSeo';
+import { Project } from '@/constants/projects';
+import { getAllLocalDataFiles } from '@/utils/localData';
 
 const meta = {
    title: 'Projects | Reyhan Naufal Rahman',
