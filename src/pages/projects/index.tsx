@@ -1,7 +1,4 @@
 import React from 'react';
-import path from 'path';
-import fs from 'fs';
-import matter from 'gray-matter';
 
 import CardView from '@/src/components/Card/CardView';
 import Layout from '@/src/components/Layout';
