@@ -13,6 +13,7 @@ export default function Layout({ children }: LayoutInterface) {
          style={{
             backgroundImage: 'url(/background-layout.png)',
          }}
+         key={'background'}
       >
          <div className='z-10 mx-auto max-w-md overflow-hidden px-10 sm:max-w-5xl'>
             <Header />

@@ -4,8 +4,8 @@ import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
 
-import Layout from '@/src/components/Layout';
-import Seo from '@/src/components/Layout/LayoutSeo';
+import Layout from '@/components/Layout';
+import Seo from '@/components/Layout/LayoutSeo';
 import { serialize } from 'next-mdx-remote/serialize';
 
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';

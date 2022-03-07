@@ -6,8 +6,8 @@ import Image from 'next/image';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
-import Layout from '@/src/components/Layout';
-import Seo from '@/src/components/Layout/LayoutSeo';
+import Layout from '@/components/Layout';
+import Seo from '@/components/Layout/LayoutSeo';
 
 export interface ProjectBySlugViewProps {
    source: MDXRemoteSerializeResult<Record<string, unknown>>;

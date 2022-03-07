@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import Layout from '@/src/components/Layout';
-import Seo from '@/src/components/Layout/LayoutSeo';
 import Link from 'next/link';
+
+import Layout from '@/components/Layout';
+import Seo from '@/components/Layout/LayoutSeo';
 
 export default function ComingSoon() {
    const image =

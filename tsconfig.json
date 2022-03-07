@@ -13,12 +13,13 @@
       "resolveJsonModule": true,
       "isolatedModules": true,
       "jsx": "preserve",
-      "baseUrl": ".",
+      "baseUrl": "./src",
       "paths": {
          "@/*": ["*"]
       },
       "incremental": true
    },
    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.js"],
-   "exclude": ["node_modules"]
+   "exclude": ["node_modules"],
+   "moduleResolution": ["node_modules", ".next", "node"]
 }

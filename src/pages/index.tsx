@@ -2,11 +2,11 @@ import React from 'react';
 import Image from 'next/image';
 import { SiJavascript, SiReact, SiRedux, SiTypescript } from 'react-icons/si';
 
-import CardView from '@/src/components/Card/CardView';
-import Layout from '@/src/components/Layout';
-import Seo from '@/src/components/Layout/LayoutSeo';
-import { OptionalProject } from '../constants/projects';
-import { getAllLocalDataFiles } from '../utils/localData';
+import CardView from '@/components/Card/CardView';
+import Layout from '@/components/Layout';
+import Seo from '@/components/Layout/LayoutSeo';
+import { OptionalProject } from '@/constants/projects';
+import { getAllLocalDataFiles } from '@/utils/localData';
 
 const stackStyles = {
    styles:
@@ -69,8 +69,8 @@ const Home = ({ projects }: HomeViewProps) => (
          </div>
 
          <div className='flex flex-col items-center sm:space-x-5 md:flex-row'>
-            {projects?.map((item: OptionalProject, id: number) => (
-               <CardView item={item} key={id} isProjectCard />
+            {projects?.map((item: OptionalProject) => (
+               <CardView item={item} key={item.title} isProjectCard />
             ))}
          </div>
       </section>
