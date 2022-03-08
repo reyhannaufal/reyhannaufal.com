@@ -2,7 +2,9 @@
 
 Personal website built using NextJS, Typecript, and TailwindCSS.
 
-![Depfu](https://img.shields.io/depfu/dependencies/github/reyhannaufal/reyhannaufal.com?style=for-the-badge)
+[![CodeFactor](https://www.codefactor.io/repository/github/reyhannaufal/reyhannaufal.com/badge)](https://www.codefactor.io/repository/github/reyhannaufal/reyhannaufal.com)
+<img src="https://img.shields.io/depfu/dependencies/github/reyhannaufal/reyhannaufal.com?style=for-the-badge" alt="drawing" width="145" />
+
 
 ## Run Locally
 
