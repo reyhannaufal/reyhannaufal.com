@@ -1,5 +1,5 @@
 
-   
+
 name: PR Source Code Check
 
 on:
@@ -9,7 +9,7 @@ on:
    pull_request:
       branches:
          - '*'
-  
+
 jobs:
   lint:
     name: Run ESLint
