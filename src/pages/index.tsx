@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { SiJavascript, SiReact, SiRedux, SiTypescript } from 'react-icons/si';
 
 import CardView from '@/components/Card/CardView';
@@ -7,6 +6,7 @@ import Layout from '@/components/Layout';
 import Seo from '@/components/Layout/LayoutSeo';
 import { OptionalProject } from '@/constants/projects';
 import { getAllLocalDataFiles } from '@/utils/localData';
+import ComputerIllustration from '@/assets/svg/ComputerIllustration';
 
 const stackStyles = {
    styles:
@@ -44,17 +44,8 @@ const Home = ({ projects }: HomeViewProps) => (
                <SiRedux className={stackStyles.styles} />
             </div>
          </div>
-         <div className='mx-auto mt-20 lg:mt-0'>
-            <div className='h-52 w-52 md:h-72 md:w-72 lg:h-auto lg:w-auto'>
-               <Image
-                  src='/laptop-illustrations.svg'
-                  placeholder='blur'
-                  height={441.64}
-                  width={519}
-                  alt='laptop-illusrations'
-                  blurDataURL='/laptop-illustrations.svg'
-               />
-            </div>
+         <div className='mx-auto'>
+            <ComputerIllustration className='h-52 w-52 md:h-72 md:w-72 lg:h-auto lg:w-auto' />
          </div>
       </section>
 
