@@ -6015,12 +6015,7 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
-typescript@4.5.5:
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
-  integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
-
-typescript@^4.4.3:
+typescript@4.6.2, typescript@^4.4.3:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.2.tgz#fe12d2727b708f4eef40f51598b3398baa9611d4"
   integrity sha512-HM/hFigTBHZhLXshn9sN37H085+hQGeJHJ/X7LpBWLID/fbc2acUMfU+lGD98X81sKP+pFa9f0DZmCwB9GnbAg==
@@ -6419,10 +6414,10 @@ yocto-queue@^0.1.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zustand@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.7.0.tgz#a5c68fb06bdee9c63ad829de2432635be6d0ce69"
-  integrity sha512-USzVzLGrvZ8VK1/sEsOAmeqa8N7D3OBdZskVaL7DL89Q4QLTYD053iIlZ5KDidyZ+Od80Dttin/f8ZulOLFFDQ==
+zustand@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-3.7.1.tgz#7388f0a7175a6c2fd9a2880b383a4bf6cdf6b7c6"
+  integrity sha512-wHBCZlKj+bg03/hP+Tzv24YhnqqP8MCeN9ECPDXoF01062SIbnfl3j9O0znkDw1lNTY0a8WN3F///a0UhhaEqg==
 
 zwitch@^2.0.0:
   version "2.0.2"
