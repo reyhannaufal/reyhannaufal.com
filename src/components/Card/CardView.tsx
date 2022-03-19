@@ -9,7 +9,7 @@ type CardViewProps = {
 };
 
 export default function CardView({ item, isProjectCard }: CardViewProps) {
-   const slug = isProjectCard ? `projects/${item.slug}` : `coming-soon`;
+   const slug = isProjectCard ? `projects/${item.slug}` : `blog/${item.slug}`;
    return (
       <>
          <Link href={slug} key={item.slug} passHref replace>
@@ -20,7 +20,7 @@ export default function CardView({ item, isProjectCard }: CardViewProps) {
                      width={450}
                      height={250}
                      blurDataURL={item.coverImage}
-                     className='rounded-lg object-cover md:h-[250px] md:object-fill'
+                     className='md:object-coverß rounded-lg object-cover md:h-[250px]'
                      src={item.coverImage as string}
                      alt={item.title}
                   />
