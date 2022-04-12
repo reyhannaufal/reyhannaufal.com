@@ -1,28 +1,27 @@
-import React from 'react';
-import Image from 'next/image';
 import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
+import React from 'react';
+import Image from 'next/image';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import Layout from '@/components/Layout';
 import Seo from '@/components/Layout/LayoutSeo';
-import { serialize } from 'next-mdx-remote/serialize';
 
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-
-interface BlogBySlugViewProps {
+export interface ProjectBySlugViewProps {
    source: MDXRemoteSerializeResult<Record<string, unknown>>;
    // eslint-disable-next-line @typescript-eslint/no-explicit-any
    frontMatter: { [k: string]: any };
 }
 
-export default function BlogBySlug({
+export default function ProjectBySlug({
    source,
    frontMatter,
-}: BlogBySlugViewProps) {
+}: ProjectBySlugViewProps) {
    return (
       <>
-         <Seo title={`Blog | ${frontMatter?.title}`} />
+         <Seo title={`Projects | ${frontMatter?.title}`} />
          <Layout>
             <h1 className='mt-7 text-xl font-bold sm:text-3xl'>
                {frontMatter?.title}
@@ -33,7 +32,7 @@ export default function BlogBySlug({
                <p>{frontMatter?.date}</p>
             </div>
             <Image
-               className='h-[250px] w-full rounded-lg object-cover sm:h-[500px]'
+               className='h-[350px] w-full object-cover sm:h-[500px]'
                src={frontMatter?.coverImage as string}
                placeholder='blur'
                blurDataURL={frontMatter?.coverImage}
@@ -49,22 +48,22 @@ export default function BlogBySlug({
    );
 }
 
-export function getStaticPaths() {
-   const blogsDirectory = path.join(process.cwd(), 'src/data/posts');
-   const filenames = fs.readdirSync(blogsDirectory);
+export async function getStaticPaths() {
+   const projectsDirectory = path.join(process.cwd(), '/data/projects');
+   const filenames = fs.readdirSync(projectsDirectory);
    const paths = filenames.map((name) => ({
       params: { slug: name.replace('.mdx', '') },
    }));
    return { paths, fallback: false };
 }
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-   const blogsPath = path.join(
+   const projectsPath = path.join(
       process.cwd(),
-      'src/data/posts',
+      '/data/projects',
       `${params.slug}.mdx`
    );
-   const blogSource = fs.readFileSync(blogsPath, 'utf8');
-   const { content, data } = matter(blogSource);
+   const projectsSource = fs.readFileSync(projectsPath, 'utf8');
+   const { content, data } = matter(projectsSource);
    const mdxSource = await serialize(content);
    return { props: { source: mdxSource, frontMatter: data } };
 }

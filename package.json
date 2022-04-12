@@ -7,7 +7,7 @@
       "build": "next build",
       "start": "next start",
       "lint": "next lint",
-      "lint:strict": "eslint --max-warnings=0 src",
+      "lint:strict": "eslint --max-warnings=0",
       "postbuild": "next-sitemap",
       "prepare": "husky install",
       "format": "prettier -w .",
