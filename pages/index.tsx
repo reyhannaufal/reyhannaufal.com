@@ -25,7 +25,7 @@ const Home = ({ projects }: HomeViewProps) => (
             <div className='space-y-1 md:space-y-2'>
                <p className='mt-2 text-sm font-bold lg:mt-0'>Hey, I&apos;m</p>
                <h1 className='max-w-[300px] text-left text-2xl  font-bold text-primary md:max-w-[500px] md:text-3xl lg:mx-0  lg:max-w-sm lg:text-4xl'>
-                  Reyhan Naufal Rahman
+                  Reyhan Naufal Rahman try
                </h1>
                <h2 className='text-lg font-bold text-secondary md:text-2xl'>
                   Software Engineer
