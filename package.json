@@ -53,5 +53,10 @@
       "**/*.{js,jsx,ts,tsx,html,css,json}": [
          "yarn prettier --write"
       ]
+   },
+   "nextBundleAnalysis": {
+      "budget": null,
+      "budgetPercentIncreaseRed": 20,
+      "showDetails": true
    }
 }
