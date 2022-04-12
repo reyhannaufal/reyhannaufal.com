@@ -10,7 +10,7 @@ on:
 defaults:
   run:
     # change this if your nextjs app does not live at the root of the repo
-    working-directory: ./src
+    working-directory: ./
 
 jobs:
   analyze:

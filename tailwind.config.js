@@ -4,9 +4,9 @@ const colors = require('tailwindcss/colors');
 // eslint-disable-next-line no-undef
 module.exports = {
    purge: [
-      './src/pages/**/*.{js,ts,jsx,tsx}',
-      './src/components/**/*.{js,ts,jsx,tsx}',
-      './src/routes/**/*.{js,ts,jsx,tsx}',
+      './pages/**/*.{js,ts,jsx,tsx}',
+      './components/**/*.{js,ts,jsx,tsx}',
+      './routes/**/*.{js,ts,jsx,tsx}',
    ],
    mode: 'jit',
    darkMode: false, // or 'media' or 'class'
